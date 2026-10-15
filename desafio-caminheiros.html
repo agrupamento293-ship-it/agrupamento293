@@ -1,0 +1,1179 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="Atividade dos Caminheiros no JOTA-JOTI 2026 do Agrupamento 293: mesa-redonda A Juventude Está Preparada? Um fórum juvenil sobre o jovem que Angola precisa nos próximos 10 anos.">
+
+    <title>A Juventude Está Preparada? | JOTA-JOTI 2026 — Agrupamento 293</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <style>
+        /* ==========================
+           1. CONFIGURAÇÕES GERAIS
+        ========================== */
+
+        :root {
+            --primary: #5426a8;
+            --primary-dark: #35166f;
+            --primary-light: #eee7fc;
+
+            --secondary: #17a673;
+            --secondary-dark: #087b52;
+            --secondary-light: #e6f8f0;
+
+            --warning: #f5a623;
+            --warning-dark: #d98a00;
+            --warning-light: #fff7e6;
+
+            --background: #f5f6fa;
+            --surface: #ffffff;
+
+            --text: #202438;
+            --text-light: #667085;
+
+            --border: #e7e8ef;
+
+            --shadow: 0 8px 30px rgba(34, 24, 66, 0.08);
+            --shadow-hover: 0 14px 38px rgba(34, 24, 66, 0.13);
+
+            --radius: 18px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            background-color: var(--background);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* ==========================
+           2. CABEÇALHO
+        ========================== */
+
+        .topo {
+            background: linear-gradient(120deg, var(--primary-dark), var(--primary));
+            color: white;
+            padding: 18px 7%;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 24px;
+            flex-wrap: wrap;
+
+            box-shadow: 0 4px 20px rgba(53, 22, 111, 0.2);
+        }
+
+        .identidade {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .identidade img {
+            width: 65px;
+            height: 65px;
+            object-fit: contain;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 5px;
+        }
+
+        .identidade h2 {
+            font-size: 19px;
+            font-weight: 700;
+            line-height: 1.4;
+        }
+
+        .identidade p {
+            font-size: 13px;
+            color: #e4d8ff;
+        }
+
+        .navegacao {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .navegacao a {
+            color: white;
+            font-size: 14px;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .navegacao a:hover,
+        .navegacao a[aria-current="page"] {
+            color: #c9f7e5;
+        }
+
+        /* ==========================
+           3. SECÇÃO PRINCIPAL
+        ========================== */
+
+        .hero {
+            padding: 65px 20px 75px;
+            text-align: center;
+
+            background:
+                radial-gradient(circle at top right, rgba(84, 38, 168, 0.16), transparent 38%),
+                radial-gradient(circle at bottom left, rgba(23, 166, 115, 0.12), transparent 35%),
+                linear-gradient(180deg, #ffffff, var(--background));
+        }
+
+        .etiqueta {
+            display: inline-block;
+            padding: 7px 15px;
+
+            border-radius: 50px;
+
+            background-color: var(--primary-light);
+            color: var(--primary);
+
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+
+            margin-bottom: 18px;
+        }
+
+        .hero h1 {
+            max-width: 800px;
+            margin: 0 auto 18px;
+
+            font-size: clamp(32px, 5vw, 52px);
+            line-height: 1.2;
+            letter-spacing: -1.5px;
+
+            color: var(--primary-dark);
+        }
+
+        .hero h1 span {
+            color: var(--secondary);
+        }
+
+        .hero>p {
+            max-width: 650px;
+            margin: 0 auto;
+
+            color: var(--text-light);
+            font-size: 17px;
+        }
+
+        .hero-detalhes {
+            margin-top: 28px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+
+            gap: 12px;
+        }
+
+        .hero-detalhes span {
+            padding: 8px 14px;
+            border: 1px solid var(--border);
+
+            border-radius: 50px;
+            background-color: white;
+
+            color: var(--text);
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        /* ==========================
+           4. CONTEÚDO PRINCIPAL
+        ========================== */
+
+        .principal {
+            width: min(1180px, 90%);
+            margin: 0 auto;
+            padding: 15px 0 70px;
+        }
+
+        .titulo-seccao {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .titulo-seccao h2 {
+            font-size: clamp(25px, 3vw, 34px);
+            color: var(--primary-dark);
+            margin-bottom: 8px;
+        }
+
+        .titulo-seccao p {
+            color: var(--text-light);
+            font-size: 15px;
+        }
+
+        /* ==========================
+           5. CARTÃO DA ATIVIDADE
+        ========================== */
+
+        .cards {
+            background-color: var(--surface);
+            border: 1px solid var(--border);
+
+            border-radius: var(--radius);
+            overflow: hidden;
+
+            box-shadow: var(--shadow);
+
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .cards:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .cabecalho-desafio {
+            padding: 25px 30px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 15px;
+            flex-wrap: wrap;
+
+            border-bottom: 1px solid var(--border);
+        }
+
+        .numero-desafio {
+            display: inline-block;
+
+            padding: 6px 12px;
+
+            border-radius: 8px;
+
+            background-color: var(--primary-light);
+            color: var(--primary);
+
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+
+            margin-bottom: 8px;
+        }
+
+        .cabecalho-desafio h2 {
+            font-size: clamp(21px, 3vw, 28px);
+            color: var(--text);
+            line-height: 1.35;
+        }
+
+        .estado-desafio {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+
+            color: var(--secondary-dark);
+            background: var(--secondary-light);
+
+            padding: 8px 13px;
+            border-radius: 50px;
+
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .estado-desafio::before {
+            content: "";
+            width: 8px;
+            height: 8px;
+
+            border-radius: 50%;
+            background-color: var(--secondary);
+        }
+
+        /* ==========================
+           6. INTRODUÇÃO
+        ========================== */
+
+        .desafios {
+            display: grid;
+            grid-template-columns: 0.95fr 1.05fr;
+
+            gap: 35px;
+            align-items: center;
+
+            padding: 30px;
+        }
+
+        .imagem-desafio {
+            position: relative;
+            overflow: hidden;
+
+            border-radius: 14px;
+            background-color: var(--primary-light);
+
+            min-height: 300px;
+        }
+
+        .imagem-desafio img {
+            width: 100%;
+            height: 100%;
+            min-height: 300px;
+
+            object-fit: cover;
+
+            transition: transform 0.5s ease;
+        }
+
+        .imagem-desafio:hover img {
+            transform: scale(1.04);
+        }
+
+        .conteudo-desafio h3 {
+            font-size: 25px;
+            color: var(--primary);
+            margin-bottom: 17px;
+        }
+
+        .conteudo-desafio h3::after {
+            content: "";
+
+            display: block;
+            width: 45px;
+            height: 4px;
+
+            margin-top: 8px;
+
+            border-radius: 5px;
+            background-color: var(--secondary);
+        }
+
+        .conteudo-desafio p {
+            color: #535b6c;
+            font-size: 15px;
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .conteudo-desafio strong {
+            color: var(--primary-dark);
+        }
+
+        /* ==========================
+           7. SECÇÕES INTERNAS
+        ========================== */
+
+        .bloco {
+            padding: 30px;
+            border-top: 1px solid var(--border);
+        }
+
+        .bloco.suave {
+            background: #fbfaff;
+        }
+
+        .bloco-cabecalho {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .bloco-cabecalho h3 {
+            font-size: 23px;
+            color: var(--primary-dark);
+            margin-bottom: 7px;
+        }
+
+        .bloco-cabecalho p {
+            font-size: 14px;
+            color: var(--text-light);
+        }
+
+        /* Tema central */
+        .tema {
+            padding: 36px 40px;
+
+            text-align: center;
+
+            border-radius: var(--radius);
+            background: linear-gradient(120deg, var(--primary-dark), var(--primary));
+            color: white;
+        }
+
+        .tema>i {
+            font-size: 34px;
+            color: #c9f7e5;
+        }
+
+        .tema small {
+            display: block;
+
+            margin: 6px 0 12px;
+
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+
+            color: #c9f7e5;
+        }
+
+        .tema p {
+            max-width: 780px;
+            margin: 0 auto;
+
+            font-size: clamp(18px, 2.6vw, 25px);
+            font-weight: 600;
+            line-height: 1.5;
+        }
+
+        .tema p strong {
+            color: #c9f7e5;
+        }
+
+        /* Convidados */
+        .convidados {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 14px;
+        }
+
+        .convidado {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+
+            min-height: 130px;
+            padding: 20px 12px;
+
+            text-align: center;
+
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+
+            transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+        }
+
+        .convidado:hover {
+            transform: translateY(-4px);
+            border-color: #c9b5f5;
+            box-shadow: 0 8px 20px rgba(84, 38, 168, 0.08);
+        }
+
+        .convidado .icone {
+            width: 48px;
+            height: 48px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 12px;
+            background: var(--primary-light);
+            color: var(--primary);
+
+            font-size: 24px;
+        }
+
+        .convidado span:last-child {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--text);
+            line-height: 1.45;
+        }
+
+        .nota-convidados {
+            margin-top: 18px;
+
+            text-align: center;
+
+            font-size: 13px;
+            color: var(--text-light);
+        }
+
+        /* Regra */
+        .regra {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+
+            padding: 22px 26px;
+
+            border-radius: 14px;
+            background: var(--warning-light);
+            border: 1px solid #f5d9a0;
+            border-left: 6px solid var(--warning);
+        }
+
+        .regra>i {
+            font-size: 32px;
+            color: var(--warning-dark);
+        }
+
+        .regra h3 {
+            font-size: 19px;
+            color: #7a4b00;
+            margin-bottom: 4px;
+        }
+
+        .regra p {
+            font-size: 14px;
+            color: #8a6420;
+        }
+
+        /* Perguntas difíceis */
+        .perguntas {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 16px;
+        }
+
+        .pergunta {
+            display: grid;
+            grid-template-columns: 44px 1fr;
+            gap: 16px;
+            align-items: start;
+
+            padding: 22px 22px;
+
+            background: white;
+            border: 1px solid var(--border);
+            border-left: 6px solid var(--primary);
+            border-radius: 14px;
+
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .pergunta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 24px rgba(84, 38, 168, 0.1);
+        }
+
+        .pergunta .num {
+            width: 44px;
+            height: 44px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 12px;
+            background: var(--primary);
+            color: white;
+
+            font-size: 18px;
+            font-weight: 800;
+        }
+
+        .pergunta p {
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 1.55;
+            color: var(--primary-dark);
+        }
+
+        .pergunta small {
+            display: block;
+
+            margin-bottom: 4px;
+
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+
+            color: var(--secondary-dark);
+        }
+
+        /* Objetivo */
+        .objetivo {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+
+            padding: 20px 26px;
+
+            border-radius: 14px;
+            background: var(--secondary-light);
+            border-left: 6px solid var(--secondary);
+        }
+
+        .objetivo i {
+            font-size: 28px;
+            color: var(--secondary-dark);
+        }
+
+        .objetivo p {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--secondary-dark);
+        }
+
+        /* ==========================
+           8. MENSAGEM FINAL
+        ========================== */
+
+        .mensagem-final {
+            margin-top: 25px;
+            padding: 30px;
+
+            border-radius: var(--radius);
+
+            background: linear-gradient(120deg, var(--primary-dark), var(--primary));
+
+            color: white;
+            text-align: center;
+        }
+
+        .mensagem-final h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .mensagem-final p {
+            max-width: 700px;
+            margin: 0 auto 20px;
+
+            color: #e8e0fa;
+            font-size: 15px;
+        }
+
+        .botoes {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .botao {
+            display: inline-block;
+
+            padding: 12px 23px;
+
+            border-radius: 9px;
+            background-color: var(--secondary);
+
+            color: white;
+            font-size: 14px;
+            font-weight: 800;
+
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .botao:hover {
+            background-color: var(--secondary-dark);
+            transform: translateY(-2px);
+        }
+
+        .botao.secundario {
+            background: transparent;
+            border: 2px solid rgba(255, 255, 255, 0.6);
+        }
+
+        .botao.secundario:hover {
+            background: rgba(255, 255, 255, 0.12);
+        }
+
+        /* ==========================
+           9. RODAPÉ
+        ========================== */
+
+        .rodape {
+            padding: 25px 20px;
+
+            background-color: #20113f;
+            color: #d5c9ec;
+
+            text-align: center;
+            font-size: 13px;
+        }
+
+        .rodape strong {
+            color: white;
+        }
+
+        .rodape p+p {
+            margin-top: 5px;
+        }
+
+        /* ==========================
+           10. RESPONSIVIDADE
+        ========================== */
+
+        @media (max-width: 900px) {
+
+            .topo {
+                padding: 18px 5%;
+            }
+
+            .desafios {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .imagem-desafio,
+            .imagem-desafio img {
+                min-height: 350px;
+                max-height: 450px;
+            }
+
+            .convidados {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .perguntas {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .topo {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 18px;
+            }
+
+            .identidade img {
+                width: 55px;
+                height: 55px;
+            }
+
+            .identidade h2 {
+                font-size: 16px;
+            }
+
+            .navegacao {
+                width: 100%;
+                gap: 20px;
+            }
+
+            .navegacao a {
+                font-size: 13px;
+            }
+
+            .hero {
+                padding: 45px 20px 55px;
+            }
+
+            .hero>p {
+                font-size: 15px;
+            }
+
+            .principal {
+                width: 92%;
+                padding-bottom: 40px;
+            }
+
+            .cabecalho-desafio {
+                padding: 22px 20px;
+            }
+
+            .desafios {
+                padding: 20px;
+            }
+
+            .imagem-desafio,
+            .imagem-desafio img {
+                min-height: 240px;
+                max-height: 320px;
+            }
+
+            .conteudo-desafio h3 {
+                font-size: 22px;
+            }
+
+            .conteudo-desafio p {
+                font-size: 14px;
+            }
+
+            .bloco {
+                padding: 25px 18px;
+            }
+
+            .tema {
+                padding: 28px 20px;
+            }
+
+            .convidados {
+                gap: 10px;
+            }
+
+            .regra,
+            .objetivo {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .pergunta {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+
+            .mensagem-final {
+                padding: 25px 20px;
+            }
+
+            .mensagem-final h3 {
+                font-size: 21px;
+            }
+        }
+
+        /* ==========================
+           11. ACESSIBILIDADE
+        ========================== */
+
+        a:focus-visible {
+            outline: 3px solid #f5c451;
+            outline-offset: 4px;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+
+            *,
+            *::before,
+            *::after {
+                scroll-behavior: auto !important;
+                transition: none !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- CABEÇALHO -->
+    <header class="topo">
+
+        <a href="#inicio" class="identidade" aria-label="Página inicial do JOTA-JOTI 2026">
+
+            <img src="img/logo.svg" alt="Logótipo do JOTA-JOTI 2026">
+
+            <div>
+                <h2>Agrupamento 293</h2>
+                <p>JOTA-JOTI 2026</p>
+            </div>
+
+        </a>
+
+        <nav class="navegacao" aria-label="Navegação principal">
+            <a href="index.html">Atividade 1</a>
+            <a href="desafio1.html">Atividade 2</a>
+            <a href="desafio-juniores.html">Juniores</a>
+            <a href="desafio-seniores.html">Seniores</a>
+            <a href="desafio-caminheiros.html" aria-current="page">Caminheiros</a>
+            <a href="#perguntas">Perguntas</a>
+        </nav>
+
+    </header>
+
+
+    <!-- APRESENTAÇÃO -->
+    <section class="hero" id="inicio">
+
+        <span class="etiqueta">Caminheiros · JOTA-JOTI 2026</span>
+
+        <h1>
+            A juventude<br>
+            <span>está preparada?</span>
+        </h1>
+
+        <p>
+            Um fórum juvenil para pensar, questionar e
+            responsabilizar. Sem discursos longos: só perguntas
+            difíceis e conversas que importam.
+        </p>
+
+        <div class="hero-detalhes">
+            <span>
+                <i class="bi bi-chat-square-quote-fill"></i>
+                Diálogo
+            </span>
+
+            <span>
+                <i class="bi bi-search"></i>
+                Pensamento crítico
+            </span>
+
+            <span>
+                <i class="bi bi-person-check-fill"></i>
+                Responsabilidade
+            </span>
+        </div>
+
+    </section>
+
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="principal" id="desafios">
+
+        <div class="titulo-seccao">
+            <h2>A vez dos Caminheiros</h2>
+            <p>
+                Um espaço para ir mais fundo: ouvir quem faz,
+                perguntar sem receio e pensar no futuro do país.
+            </p>
+        </div>
+
+
+        <!-- ATIVIDADE CAMINHEIROS -->
+        <article class="cards">
+
+            <header class="cabecalho-desafio">
+
+                <div>
+                    <span class="numero-desafio">ATIVIDADE 01 · CAMINHEIROS</span>
+
+                    <h2>Mesa-redonda: A Juventude Está Preparada?</h2>
+                </div>
+
+                <span class="estado-desafio">
+                    Fórum juvenil
+                </span>
+
+            </header>
+
+
+            <!-- INTRODUÇÃO -->
+            <section class="desafios">
+
+                <div class="imagem-desafio">
+
+                    <img src="img/desafio6.jpg" alt="Caminheiros numa mesa-redonda com convidados"
+                        loading="lazy">
+
+                </div>
+
+
+                <div class="conteudo-desafio">
+
+                    <h3>Introdução</h3>
+
+                    <p>
+                        Esta atividade tem o formato de um
+                        <strong>fórum juvenil</strong>: uma mesa-redonda
+                        onde os Caminheiros se encontram com pessoas
+                        que vivem o dia a dia do país, em diferentes
+                        áreas.
+                    </p>
+
+                    <p>
+                        O objetivo não é ouvir discursos, mas
+                        <strong>fazer perguntas difíceis</strong>
+                        e obter respostas honestas sobre emprego,
+                        educação, responsabilidade e futuro.
+                    </p>
+
+                    <p>
+                        Dessa conversa podem sair ideias, dúvidas
+                        e compromissos que cada Caminheiro leva
+                        para a sua própria vida.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- TEMA CENTRAL -->
+            <section class="bloco">
+
+                <div class="tema">
+                    <i class="bi bi-quote" aria-hidden="true"></i>
+                    <small>O tema</small>
+                    <p>
+                        “Que tipo de <strong>jovem</strong> Angola precisa
+                        nos <strong>próximos 10 anos</strong>?”
+                    </p>
+                </div>
+
+            </section>
+
+
+            <!-- CONVIDADOS -->
+            <section class="bloco suave" id="convidados">
+
+                <div class="bloco-cabecalho">
+                    <h3>Convidados possíveis</h3>
+                    <p>Vozes de diferentes áreas, para uma conversa com vários pontos de vista.</p>
+                </div>
+
+                <div class="convidados">
+                    <div class="convidado"><span class="icone" aria-hidden="true"><i class="bi bi-rocket-takeoff-fill"></i></span><span>Jovem empreendedor</span></div>
+                    <div class="convidado"><span class="icone" aria-hidden="true"><i class="bi bi-heart-pulse-fill"></i></span><span>Profissional de saúde</span></div>
+                    <div class="convidado"><span class="icone" aria-hidden="true"><i class="bi bi-gear-wide-connected"></i></span><span>Engenheiro</span></div>
+                    <div class="convidado"><span class="icone" aria-hidden="true"><i class="bi bi-mortarboard-fill"></i></span><span>Professor</span></div>
+                    <div class="convidado"><span class="icone" aria-hidden="true"><i class="bi bi-people-fill"></i></span><span>Representante comunitário</span></div>
+                    <div class="convidado"><span class="icone" aria-hidden="true"><i class="bi bi-briefcase-fill"></i></span><span>Empresário</span></div>
+                    <div class="convidado"><span class="icone" aria-hidden="true"><i class="bi bi-book-half"></i></span><span>Líder religioso</span></div>
+                    <div class="convidado"><span class="icone" aria-hidden="true"><i class="bi bi-stars"></i></span><span>Jovem com um projeto social</span></div>
+                </div>
+
+            </section>
+
+
+            <!-- REGRA -->
+            <section class="bloco">
+
+                <div class="regra">
+                    <i class="bi bi-ban" aria-hidden="true"></i>
+                    <div>
+                        <h3>Regra de ouro</h3>
+                        <p>
+                            Não transformar em palestra. Cada convidado
+                            recebe perguntas difíceis e responde a elas
+                            em diálogo com os Caminheiros.
+                        </p>
+                    </div>
+                </div>
+
+            </section>
+
+
+            <!-- PERGUNTAS -->
+            <section class="bloco suave" id="perguntas">
+
+                <div class="bloco-cabecalho">
+                    <h3>Perguntas difíceis</h3>
+                    <p>Exemplos de perguntas para colocar aos convidados.</p>
+                </div>
+
+                <div class="perguntas">
+
+                    <div class="pergunta">
+                        <span class="num">1</span>
+                        <div>
+                            <small>Emprego</small>
+                            <p>“Porque tantos jovens terminam a formação sem conseguir emprego?”</p>
+                        </div>
+                    </div>
+
+                    <div class="pergunta">
+                        <span class="num">2</span>
+                        <div>
+                            <small>Educação</small>
+                            <p>“O que está a faltar à nossa educação?”</p>
+                        </div>
+                    </div>
+
+                    <div class="pergunta">
+                        <span class="num">3</span>
+                        <div>
+                            <small>Oportunidades</small>
+                            <p>“O jovem deve procurar emprego ou criar oportunidades?”</p>
+                        </div>
+                    </div>
+
+                    <div class="pergunta">
+                        <span class="num">4</span>
+                        <div>
+                            <small>Responsabilidade</small>
+                            <p>“Qual é a responsabilidade do próprio jovem?”</p>
+                        </div>
+                    </div>
+
+                    <div class="pergunta">
+                        <span class="num">5</span>
+                        <div>
+                            <small>Redes sociais</small>
+                            <p>“As redes sociais estão a ajudar ou a prejudicar a juventude?”</p>
+                        </div>
+                    </div>
+
+                    <div class="pergunta">
+                        <span class="num">6</span>
+                        <div>
+                            <small>Voluntariado</small>
+                            <p>“Que papel deve ter o voluntariado?”</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- OBJETIVO -->
+            <section class="bloco">
+
+                <div class="objetivo">
+                    <i class="bi bi-lightbulb-fill" aria-hidden="true"></i>
+                    <p>
+                        O que se pretende: uma conversa
+                        extremamente rica, onde as respostas
+                        geram novas perguntas.
+                    </p>
+                </div>
+
+            </section>
+
+        </article>
+
+
+        <!-- MENSAGEM FINAL -->
+        <section class="mensagem-final">
+
+            <h3>Estás preparado para perguntar?</h3>
+
+            <p>
+                Escuta com atenção, questiona sem medo e leva
+                contigo o que ouvires. A juventude que Angola
+                precisa começa em conversas como esta.
+            </p>
+
+            <div class="botoes">
+                <a href="#inicio" class="botao">Vamos começar!</a>
+                <a href="desafio-seniores.html" class="botao secundario">Ver Seniores</a>
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- RODAPÉ -->
+    <footer class="rodape">
+
+        <p>
+            <strong>JOTA-JOTI 2026</strong> |
+            Agrupamento 293
+        </p>
+
+        <p>
+            Unidos pela aventura, criatividade e espírito de equipa.
+        </p>
+
+    </footer>
+
+</body>
+
+</html>

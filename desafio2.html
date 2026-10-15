@@ -1,0 +1,1184 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="Atividade 2 do JOTA-JOTI 2026 do Agrupamento 293: A Caça ao Tesouro da Natureza, uma aventura dos Lobitos para descobrir e proteger o ambiente.">
+
+    <title>A Caça ao Tesouro da Natureza | JOTA-JOTI 2026 — Agrupamento 293</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <style>
+        /* ==========================
+           1. CONFIGURAÇÕES GERAIS
+        ========================== */
+
+        :root {
+            --primary: #5426a8;
+            --primary-dark: #35166f;
+            --primary-light: #eee7fc;
+
+            --secondary: #17a673;
+            --secondary-dark: #087b52;
+            --secondary-light: #e6f8f0;
+
+            --warning: #f5a623;
+            --warning-dark: #d98a00;
+            --warning-light: #fff7e6;
+
+            --background: #f5f6fa;
+            --surface: #ffffff;
+
+            --text: #202438;
+            --text-light: #667085;
+
+            --border: #e7e8ef;
+
+            --shadow: 0 8px 30px rgba(34, 24, 66, 0.08);
+            --shadow-hover: 0 14px 38px rgba(34, 24, 66, 0.13);
+
+            --radius: 18px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            background-color: var(--background);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* ==========================
+           2. CABEÇALHO
+        ========================== */
+
+        .topo {
+            background: linear-gradient(120deg, var(--primary-dark), var(--primary));
+            color: white;
+            padding: 18px 7%;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 24px;
+            flex-wrap: wrap;
+
+            box-shadow: 0 4px 20px rgba(53, 22, 111, 0.2);
+        }
+
+        .identidade {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .identidade img {
+            width: 65px;
+            height: 65px;
+            object-fit: contain;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 5px;
+        }
+
+        .identidade h2 {
+            font-size: 19px;
+            font-weight: 700;
+            line-height: 1.4;
+        }
+
+        .identidade p {
+            font-size: 13px;
+            color: #e4d8ff;
+        }
+
+        .navegacao {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .navegacao a {
+            color: white;
+            font-size: 14px;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .navegacao a:hover,
+        .navegacao a[aria-current="page"] {
+            color: #c9f7e5;
+        }
+
+        /* ==========================
+           3. SECÇÃO PRINCIPAL
+        ========================== */
+
+        .hero {
+            padding: 65px 20px 75px;
+            text-align: center;
+
+            background:
+                radial-gradient(circle at top right, rgba(23, 166, 115, 0.14), transparent 35%),
+                linear-gradient(180deg, #ffffff, var(--background));
+        }
+
+        .etiqueta {
+            display: inline-block;
+            padding: 7px 15px;
+
+            border-radius: 50px;
+
+            background-color: var(--primary-light);
+            color: var(--primary);
+
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+
+            margin-bottom: 18px;
+        }
+
+        .hero h1 {
+            max-width: 800px;
+            margin: 0 auto 18px;
+
+            font-size: clamp(32px, 5vw, 52px);
+            line-height: 1.2;
+            letter-spacing: -1.5px;
+
+            color: var(--primary-dark);
+        }
+
+        .hero h1 span {
+            color: var(--secondary);
+        }
+
+        .hero>p {
+            max-width: 650px;
+            margin: 0 auto;
+
+            color: var(--text-light);
+            font-size: 17px;
+        }
+
+        .hero-detalhes {
+            margin-top: 28px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+
+            gap: 12px;
+        }
+
+        .hero-detalhes span {
+            padding: 8px 14px;
+            border: 1px solid var(--border);
+
+            border-radius: 50px;
+            background-color: white;
+
+            color: var(--text);
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        /* ==========================
+           4. CONTEÚDO PRINCIPAL
+        ========================== */
+
+        .principal {
+            width: min(1180px, 90%);
+            margin: 0 auto;
+            padding: 15px 0 70px;
+        }
+
+        .titulo-seccao {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .titulo-seccao h2 {
+            font-size: clamp(25px, 3vw, 34px);
+            color: var(--primary-dark);
+            margin-bottom: 8px;
+        }
+
+        .titulo-seccao p {
+            color: var(--text-light);
+            font-size: 15px;
+        }
+
+        /* ==========================
+           5. CARTÃO DA ATIVIDADE
+        ========================== */
+
+        .cards {
+            background-color: var(--surface);
+            border: 1px solid var(--border);
+
+            border-radius: var(--radius);
+            overflow: hidden;
+
+            box-shadow: var(--shadow);
+
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .cards:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .cabecalho-desafio {
+            padding: 25px 30px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 15px;
+            flex-wrap: wrap;
+
+            border-bottom: 1px solid var(--border);
+        }
+
+        .numero-desafio {
+            display: inline-block;
+
+            padding: 6px 12px;
+
+            border-radius: 8px;
+
+            background-color: var(--primary-light);
+            color: var(--primary);
+
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+
+            margin-bottom: 8px;
+        }
+
+        .cabecalho-desafio h2 {
+            font-size: clamp(21px, 3vw, 28px);
+            color: var(--text);
+            line-height: 1.35;
+        }
+
+        .estado-desafio {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+
+            color: var(--secondary-dark);
+            background: var(--secondary-light);
+
+            padding: 8px 13px;
+            border-radius: 50px;
+
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .estado-desafio::before {
+            content: "";
+            width: 8px;
+            height: 8px;
+
+            border-radius: 50%;
+            background-color: var(--secondary);
+        }
+
+        /* ==========================
+           6. INTRODUÇÃO
+        ========================== */
+
+        .desafios {
+            display: grid;
+            grid-template-columns: 0.95fr 1.05fr;
+
+            gap: 35px;
+            align-items: center;
+
+            padding: 30px;
+        }
+
+        .imagem-desafio {
+            position: relative;
+            overflow: hidden;
+
+            border-radius: 14px;
+            background-color: var(--primary-light);
+
+            min-height: 300px;
+        }
+
+        .imagem-desafio img {
+            width: 100%;
+            height: 100%;
+            min-height: 300px;
+
+            object-fit: cover;
+
+            transition: transform 0.5s ease;
+        }
+
+        .imagem-desafio:hover img {
+            transform: scale(1.04);
+        }
+
+        .conteudo-desafio h3 {
+            font-size: 25px;
+            color: var(--primary);
+            margin-bottom: 17px;
+        }
+
+        .conteudo-desafio h3::after {
+            content: "";
+
+            display: block;
+            width: 45px;
+            height: 4px;
+
+            margin-top: 8px;
+
+            border-radius: 5px;
+            background-color: var(--secondary);
+        }
+
+        .conteudo-desafio p {
+            color: #535b6c;
+            font-size: 15px;
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .conteudo-desafio strong {
+            color: var(--primary-dark);
+        }
+
+        /* ==========================
+           7. SECÇÕES INTERNAS
+        ========================== */
+
+        .bloco {
+            padding: 30px;
+            border-top: 1px solid var(--border);
+        }
+
+        .bloco.suave {
+            background: #fbfaff;
+        }
+
+        .bloco-cabecalho {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .bloco-cabecalho h3 {
+            font-size: 23px;
+            color: var(--primary-dark);
+            margin-bottom: 7px;
+        }
+
+        .bloco-cabecalho p {
+            font-size: 14px;
+            color: var(--text-light);
+        }
+
+        /* Lista de desafios da caça */
+        .lista-missoes {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 14px;
+        }
+
+        .missao {
+            position: relative;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+
+            min-height: 150px;
+            padding: 22px 12px 18px;
+
+            text-align: center;
+
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+
+            transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+        }
+
+        .missao:hover {
+            transform: translateY(-4px);
+            border-color: #c9b5f5;
+            box-shadow: 0 8px 20px rgba(84, 38, 168, 0.08);
+        }
+
+        .missao .ordem {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+
+            width: 24px;
+            height: 24px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+            background: var(--primary);
+            color: white;
+
+            font-size: 12px;
+            font-weight: 800;
+        }
+
+        .missao .icone {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            width: 48px;
+            height: 48px;
+
+            background-color: var(--primary-light);
+            border-radius: 12px;
+
+            font-size: 24px;
+            color: var(--primary);
+        }
+
+        .missao span:last-child {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--text);
+            line-height: 1.5;
+        }
+
+        /* Regra de ouro */
+        .regra {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+
+            padding: 22px 26px;
+
+            border-radius: 14px;
+            background: var(--warning-light);
+            border: 1px solid #f5d9a0;
+            border-left: 6px solid var(--warning);
+        }
+
+        .regra>i {
+            font-size: 32px;
+            color: var(--warning-dark);
+        }
+
+        .regra h3 {
+            font-size: 19px;
+            color: #7a4b00;
+            margin-bottom: 4px;
+        }
+
+        .regra p {
+            font-size: 14px;
+            color: #8a6420;
+        }
+
+        /* Desafio final: 5 coisas a proteger */
+        .desafio-final {
+            max-width: 700px;
+            margin: 0 auto 25px;
+
+            text-align: center;
+            padding: 20px 26px;
+
+            border-radius: 14px;
+            background: var(--primary-light);
+            border-left: 6px solid var(--primary);
+            border-right: 6px solid var(--primary);
+        }
+
+        .desafio-final p {
+            font-size: 17px;
+            font-weight: 700;
+            color: var(--primary-dark);
+        }
+
+        .desafio-final small {
+            display: block;
+            margin-top: 4px;
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--text-light);
+        }
+
+        .lista-proteger {
+            display: grid;
+            grid-template-columns: repeat(5, minmax(0, 1fr));
+            gap: 14px;
+        }
+
+        .proteger {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+
+            min-height: 125px;
+            padding: 18px 10px;
+
+            text-align: center;
+
+            background: white;
+            border: 2px dashed #b9e5d3;
+            border-radius: 12px;
+
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .proteger:hover {
+            transform: translateY(-4px);
+            border-color: var(--secondary);
+        }
+
+        .proteger i {
+            font-size: 26px;
+            color: var(--secondary);
+        }
+
+        .proteger strong {
+            font-size: 13px;
+            color: var(--text);
+        }
+
+        .proteger small {
+            font-size: 12px;
+            color: var(--text-light);
+        }
+
+        .formas {
+            margin-top: 22px;
+
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .formas span {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+
+            padding: 8px 16px;
+
+            border-radius: 50px;
+            background: var(--secondary-light);
+            color: var(--secondary-dark);
+
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        /* Cartaz final */
+        .cartaz {
+            max-width: 780px;
+            margin: 0 auto;
+
+            padding: 34px 30px;
+
+            text-align: center;
+
+            border-radius: var(--radius);
+            background: linear-gradient(145deg, #ffffff, #f1fbf6);
+            border: 3px solid var(--secondary);
+            box-shadow: 0 10px 28px rgba(23, 166, 115, 0.14);
+        }
+
+        .cartaz>i {
+            font-size: 38px;
+            color: var(--secondary);
+        }
+
+        .cartaz h3 {
+            margin: 8px 0 12px;
+
+            font-size: clamp(22px, 3.4vw, 30px);
+            line-height: 1.3;
+            letter-spacing: -0.5px;
+            text-transform: uppercase;
+
+            color: var(--primary-dark);
+        }
+
+        .cartaz p {
+            max-width: 560px;
+            margin: 0 auto 18px;
+
+            font-size: 15px;
+            color: #535b6c;
+        }
+
+        .marcas {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .marcas span {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+
+            padding: 8px 16px;
+
+            border-radius: 50px;
+            background: white;
+            border: 1px solid var(--border);
+
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--primary-dark);
+        }
+
+        .marcas i {
+            color: var(--secondary);
+        }
+
+        /* ==========================
+           8. MENSAGEM FINAL
+        ========================== */
+
+        .mensagem-final {
+            margin-top: 25px;
+            padding: 30px;
+
+            border-radius: var(--radius);
+
+            background: linear-gradient(120deg, var(--primary-dark), var(--primary));
+
+            color: white;
+            text-align: center;
+        }
+
+        .mensagem-final h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .mensagem-final p {
+            max-width: 700px;
+            margin: 0 auto 20px;
+
+            color: #e8e0fa;
+            font-size: 15px;
+        }
+
+        .botoes {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .botao {
+            display: inline-block;
+
+            padding: 12px 23px;
+
+            border-radius: 9px;
+            background-color: var(--secondary);
+
+            color: white;
+            font-size: 14px;
+            font-weight: 800;
+
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .botao:hover {
+            background-color: var(--secondary-dark);
+            transform: translateY(-2px);
+        }
+
+        .botao.secundario {
+            background: transparent;
+            border: 2px solid rgba(255, 255, 255, 0.6);
+        }
+
+        .botao.secundario:hover {
+            background: rgba(255, 255, 255, 0.12);
+        }
+
+        /* ==========================
+           9. RODAPÉ
+        ========================== */
+
+        .rodape {
+            padding: 25px 20px;
+
+            background-color: #20113f;
+            color: #d5c9ec;
+
+            text-align: center;
+            font-size: 13px;
+        }
+
+        .rodape strong {
+            color: white;
+        }
+
+        .rodape p+p {
+            margin-top: 5px;
+        }
+
+        /* ==========================
+           10. RESPONSIVIDADE
+        ========================== */
+
+        @media (max-width: 900px) {
+
+            .topo {
+                padding: 18px 5%;
+            }
+
+            .desafios {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .imagem-desafio,
+            .imagem-desafio img {
+                min-height: 350px;
+                max-height: 450px;
+            }
+
+            .lista-missoes {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .lista-proteger {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .topo {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 18px;
+            }
+
+            .identidade img {
+                width: 55px;
+                height: 55px;
+            }
+
+            .identidade h2 {
+                font-size: 16px;
+            }
+
+            .navegacao {
+                width: 100%;
+                gap: 20px;
+            }
+
+            .navegacao a {
+                font-size: 13px;
+            }
+
+            .hero {
+                padding: 45px 20px 55px;
+            }
+
+            .hero>p {
+                font-size: 15px;
+            }
+
+            .principal {
+                width: 92%;
+                padding-bottom: 40px;
+            }
+
+            .cabecalho-desafio {
+                padding: 22px 20px;
+            }
+
+            .desafios {
+                padding: 20px;
+            }
+
+            .imagem-desafio,
+            .imagem-desafio img {
+                min-height: 240px;
+                max-height: 320px;
+            }
+
+            .conteudo-desafio h3 {
+                font-size: 22px;
+            }
+
+            .conteudo-desafio p {
+                font-size: 14px;
+            }
+
+            .bloco {
+                padding: 25px 18px;
+            }
+
+            .lista-missoes {
+                gap: 10px;
+            }
+
+            .lista-proteger {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 10px;
+            }
+
+            .regra {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .cartaz {
+                padding: 26px 18px;
+            }
+
+            .mensagem-final {
+                padding: 25px 20px;
+            }
+
+            .mensagem-final h3 {
+                font-size: 21px;
+            }
+        }
+
+        /* ==========================
+           11. ACESSIBILIDADE
+        ========================== */
+
+        a:focus-visible {
+            outline: 3px solid #f5c451;
+            outline-offset: 4px;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+
+            *,
+            *::before,
+            *::after {
+                scroll-behavior: auto !important;
+                transition: none !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- CABEÇALHO -->
+    <header class="topo">
+
+        <a href="#inicio" class="identidade" aria-label="Página inicial do JOTA-JOTI 2026">
+
+            <img src="img/logo.svg" alt="Logótipo do JOTA-JOTI 2026">
+
+            <div>
+                <h2>Agrupamento 293</h2>
+                <p>JOTA-JOTI 2026</p>
+            </div>
+
+        </a>
+
+        <nav class="navegacao" aria-label="Navegação principal">
+            <a href="desafios.html">Atividade 1</a>
+            <a href="desafio2.html" aria-current="page">Atividade 2</a>
+            <a href="#missoes">Missões</a>
+            <a href="#cartaz">Cartaz</a>
+        </nav>
+
+    </header>
+
+
+    <!-- APRESENTAÇÃO -->
+    <section class="hero" id="inicio">
+
+        <span class="etiqueta">Atividade 2 · Lobitos</span>
+
+        <h1>
+            A Caça ao Tesouro<br>
+            <span>da Natureza</span>
+        </h1>
+
+        <p>
+            Explora, observa e descobre os segredos que a natureza
+            esconde à tua volta. Em equipa, vais aprender a olhar
+            com atenção e a proteger o que é de todos nós.
+        </p>
+
+        <div class="hero-detalhes">
+            <span>
+                <i class="bi bi-search"></i>
+                Exploração
+            </span>
+
+            <span>
+                <i class="bi bi-people-fill"></i>
+                Equipas
+            </span>
+
+            <span>
+                <i class="bi bi-tree-fill"></i>
+                Respeito pela natureza
+            </span>
+        </div>
+
+    </section>
+
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="principal" id="desafios">
+
+        <div class="titulo-seccao">
+            <h2>Parte para a aventura</h2>
+            <p>
+                Cada pista encontrada é um passo para proteger
+                o mundo que nos rodeia.
+            </p>
+        </div>
+
+
+        <!-- ATIVIDADE 2 -->
+        <article class="cards">
+
+            <header class="cabecalho-desafio">
+
+                <div>
+                    <span class="numero-desafio">ATIVIDADE 02</span>
+
+                    <h2>A Caça ao Tesouro da Natureza</h2>
+                </div>
+
+                <span class="estado-desafio">
+                    Missão dos Lobitos
+                </span>
+
+            </header>
+
+
+            <!-- INTRODUÇÃO -->
+            <section class="desafios">
+
+                <div class="imagem-desafio">
+
+                    <img src="img/desafio2.jpg" alt="Lobitos a explorar a natureza em equipa" loading="lazy">
+
+                </div>
+
+
+                <div class="conteudo-desafio">
+
+                    <h3>Introdução</h3>
+
+                    <p>
+                        Esta é uma das atividades mais divertidas
+                        para os <strong>Lobitos</strong>! A natureza
+                        está cheia de tesouros escondidos e cabe a
+                        cada equipa descobri-los.
+                    </p>
+
+                    <p>
+                        Cada equipa recebe uma <strong>folha com
+                            desafios</strong>. Basta explorar o espaço
+                        à vossa volta, observar com atenção e
+                        descobrir tudo o que a lista pede.
+                    </p>
+
+                    <p>
+                        Podem registar cada descoberta com uma
+                        <strong>fotografia</strong> ou simplesmente
+                        com um <strong>desenho</strong>. O mais
+                        importante é olhar, escutar e aprender.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- MISSÕES -->
+            <section class="bloco suave" id="missoes">
+
+                <div class="bloco-cabecalho">
+                    <h3>A folha de desafios</h3>
+                    <p>Descobre tudo o que a tua equipa precisa de encontrar.</p>
+                </div>
+
+                <div class="lista-missoes">
+                    <div class="missao"><span class="ordem">1</span><span class="icone" aria-hidden="true"><i class="bi bi-flower3"></i></span><span>Encontrar uma folha diferente de todas as outras</span></div>
+                    <div class="missao"><span class="ordem">2</span><span class="icone" aria-hidden="true"><i class="bi bi-bug-fill"></i></span><span>Encontrar um pequeno ser vivo sem o tocar</span></div>
+                    <div class="missao"><span class="ordem">3</span><span class="icone" aria-hidden="true"><i class="bi bi-tree-fill"></i></span><span>Encontrar uma árvore</span></div>
+                    <div class="missao"><span class="ordem">4</span><span class="icone" aria-hidden="true"><i class="bi bi-gem"></i></span><span>Encontrar uma pedra com formato curioso</span></div>
+                    <div class="missao"><span class="ordem">5</span><span class="icone" aria-hidden="true"><i class="bi bi-droplet-fill"></i></span><span>Encontrar uma fonte de água</span></div>
+                    <div class="missao"><span class="ordem">6</span><span class="icone" aria-hidden="true"><i class="bi bi-ear-fill"></i></span><span>Encontrar um lugar onde se consegue ouvir claramente a natureza</span></div>
+                    <div class="missao"><span class="ordem">7</span><span class="icone" aria-hidden="true"><i class="bi bi-trash3-fill"></i></span><span>Encontrar lixo que não deveria estar ali</span></div>
+                </div>
+
+            </section>
+
+
+            <!-- REGRA -->
+            <section class="bloco">
+
+                <div class="regra">
+                    <i class="bi bi-shield-fill-check" aria-hidden="true"></i>
+                    <div>
+                        <h3>Regra de ouro</h3>
+                        <p>
+                            Não podem destruir, arrancar ou matar nada.
+                            Observamos, registamos e deixamos tudo
+                            como encontrámos.
+                        </p>
+                    </div>
+                </div>
+
+            </section>
+
+
+            <!-- DESAFIO FINAL -->
+            <section class="bloco suave" id="proteger">
+
+                <div class="bloco-cabecalho">
+                    <h3>O desafio final</h3>
+                    <p>Chegou o momento de pensar no que realmente importa.</p>
+                </div>
+
+                <div class="desafio-final">
+                    <p>“Encontrem 5 coisas da natureza que podemos proteger.”</p>
+                    <small>Cada equipa escolhe as suas cinco descobertas.</small>
+                </div>
+
+                <div class="lista-proteger">
+                    <div class="proteger"><i class="bi bi-1-circle-fill" aria-hidden="true"></i><strong>Descoberta 1</strong><small>O que vamos proteger?</small></div>
+                    <div class="proteger"><i class="bi bi-2-circle-fill" aria-hidden="true"></i><strong>Descoberta 2</strong><small>O que vamos proteger?</small></div>
+                    <div class="proteger"><i class="bi bi-3-circle-fill" aria-hidden="true"></i><strong>Descoberta 3</strong><small>O que vamos proteger?</small></div>
+                    <div class="proteger"><i class="bi bi-4-circle-fill" aria-hidden="true"></i><strong>Descoberta 4</strong><small>O que vamos proteger?</small></div>
+                    <div class="proteger"><i class="bi bi-5-circle-fill" aria-hidden="true"></i><strong>Descoberta 5</strong><small>O que vamos proteger?</small></div>
+                </div>
+
+                <div class="formas">
+                    <span><i class="bi bi-camera-fill" aria-hidden="true"></i> Podem fotografar</span>
+                    <span><i class="bi bi-pencil-fill" aria-hidden="true"></i> Ou simplesmente desenhar</span>
+                </div>
+
+            </section>
+
+
+            <!-- CARTAZ FINAL -->
+            <section class="bloco" id="cartaz">
+
+                <div class="bloco-cabecalho">
+                    <h3>Final</h3>
+                    <p>Todos juntos para uma grande promessa.</p>
+                </div>
+
+                <div class="cartaz">
+                    <i class="bi bi-heart-fill" aria-hidden="true"></i>
+
+                    <h3>A natureza que o Lobito promete proteger</h3>
+
+                    <p>
+                        Todos fazem, em conjunto, um grande cartaz.
+                        Cada Lobito deixa a sua marca, para mostrar
+                        que faz parte desta promessa.
+                    </p>
+
+                    <div class="marcas">
+                        <span><i class="bi bi-brush-fill" aria-hidden="true"></i> Uma pequena marca</span>
+                        <span><i class="bi bi-palette-fill" aria-hidden="true"></i> Um desenho</span>
+                        <span><i class="bi bi-fingerprint" aria-hidden="true"></i> Uma impressão digital</span>
+                    </div>
+                </div>
+
+            </section>
+
+        </article>
+
+
+        <!-- MENSAGEM FINAL -->
+        <section class="mensagem-final">
+
+            <h3>Prontos para descobrir o tesouro?</h3>
+
+            <p>
+                Olhem com atenção, escutem a natureza e trabalhem
+                em equipa. O verdadeiro tesouro é o mundo que
+                prometemos proteger!
+            </p>
+
+            <div class="botoes">
+                <a href="#inicio" class="botao">Vamos começar!</a>
+                <a href="desafios.html" class="botao secundario">Ver Atividade 1</a>
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- RODAPÉ -->
+    <footer class="rodape">
+
+        <p>
+            <strong>JOTA-JOTI 2026</strong> |
+            Agrupamento 293
+        </p>
+
+        <p>
+            Unidos pela aventura, criatividade e espírito de equipa.
+        </p>
+
+    </footer>
+
+</body>
+
+</html>

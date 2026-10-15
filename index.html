@@ -1,0 +1,1101 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="Descobre os desafios do JOTA-JOTI 2026 do Agrupamento 293. Criatividade, aventura, cooperação e sustentabilidade.">
+
+    <title>Desafios | JOTA-JOTI 2026 — Agrupamento 293</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+
+    <style>
+        /* ==========================
+           1. CONFIGURAÇÕES GERAIS
+        ========================== */
+
+        :root {
+            --primary: #5426a8;
+            --primary-dark: #35166f;
+            --primary-light: #eee7fc;
+
+            --secondary: #17a673;
+            --secondary-dark: #087b52;
+
+            --background: #f5f6fa;
+            --surface: #ffffff;
+
+            --text: #202438;
+            --text-light: #667085;
+
+            --border: #e7e8ef;
+
+            --shadow: 0 8px 30px rgba(34, 24, 66, 0.08);
+            --shadow-hover: 0 14px 38px rgba(34, 24, 66, 0.13);
+
+            --radius: 18px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            background-color: var(--background);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* ==========================
+           2. CABEÇALHO
+        ========================== */
+
+        .topo {
+            background: linear-gradient(120deg,
+                    var(--primary-dark),
+                    var(--primary));
+
+            color: white;
+            padding: 18px 7%;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 24px;
+            flex-wrap: wrap;
+
+            box-shadow: 0 4px 20px rgba(53, 22, 111, 0.2);
+        }
+
+        .identidade {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .identidade img {
+            width: 65px;
+            height: 65px;
+            object-fit: contain;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 5px;
+        }
+
+        .identidade h2 {
+            font-size: 19px;
+            font-weight: 700;
+            line-height: 1.4;
+        }
+
+        .identidade p {
+            font-size: 13px;
+            color: #e4d8ff;
+        }
+
+        .navegacao {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .navegacao a {
+            color: white;
+            font-size: 14px;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .navegacao a:hover {
+            color: #c9f7e5;
+        }
+
+        /* ==========================
+           3. SECÇÃO PRINCIPAL
+        ========================== */
+
+        .hero {
+            padding: 65px 20px 75px;
+            text-align: center;
+
+            background:
+                radial-gradient(circle at top right,
+                    rgba(84, 38, 168, 0.12),
+                    transparent 35%),
+                linear-gradient(180deg,
+                    #ffffff,
+                    var(--background));
+        }
+
+        .etiqueta {
+            display: inline-block;
+            padding: 7px 15px;
+
+            border-radius: 50px;
+
+            background-color: var(--primary-light);
+            color: var(--primary);
+
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+
+            margin-bottom: 18px;
+        }
+
+        .hero h1 {
+            max-width: 800px;
+            margin: 0 auto 18px;
+
+            font-size: clamp(32px, 5vw, 52px);
+            line-height: 1.2;
+            letter-spacing: -1.5px;
+
+            color: var(--primary-dark);
+        }
+
+        .hero h1 span {
+            color: var(--secondary);
+        }
+
+        .hero>p {
+            max-width: 650px;
+            margin: 0 auto;
+
+            color: var(--text-light);
+            font-size: 17px;
+        }
+
+        .hero-detalhes {
+            margin-top: 28px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+
+            gap: 12px;
+        }
+
+        .hero-detalhes span {
+            padding: 8px 14px;
+            border: 1px solid var(--border);
+
+            border-radius: 50px;
+            background-color: white;
+
+            color: var(--text);
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        /* ==========================
+           4. CONTEÚDO PRINCIPAL
+        ========================== */
+
+        .principal {
+            width: min(1180px, 90%);
+            margin: 0 auto;
+            padding: 15px 0 70px;
+        }
+
+        .titulo-seccao {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .titulo-seccao h2 {
+            font-size: clamp(25px, 3vw, 34px);
+            color: var(--primary-dark);
+            margin-bottom: 8px;
+        }
+
+        .titulo-seccao p {
+            color: var(--text-light);
+            font-size: 15px;
+        }
+
+        /* ==========================
+           5. CARTÃO DO DESAFIO
+        ========================== */
+
+        .cards {
+            background-color: var(--surface);
+            border: 1px solid var(--border);
+
+            border-radius: var(--radius);
+            overflow: hidden;
+
+            box-shadow: var(--shadow);
+
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+
+        .cards:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .cabecalho-desafio {
+            padding: 25px 30px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 15px;
+            flex-wrap: wrap;
+
+            border-bottom: 1px solid var(--border);
+        }
+
+        .numero-desafio {
+            display: inline-block;
+
+            padding: 6px 12px;
+
+            border-radius: 8px;
+
+            background-color: var(--primary-light);
+            color: var(--primary);
+
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+
+            margin-bottom: 8px;
+        }
+
+        .cabecalho-desafio h2 {
+            font-size: clamp(21px, 3vw, 28px);
+            color: var(--text);
+            line-height: 1.35;
+        }
+
+        .estado-desafio {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+
+            color: var(--secondary-dark);
+            background: #e6f8f0;
+
+            padding: 8px 13px;
+            border-radius: 50px;
+
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .estado-desafio::before {
+            content: "";
+            width: 8px;
+            height: 8px;
+
+            border-radius: 50%;
+            background-color: var(--secondary);
+        }
+
+        /* ==========================
+           6. INTRODUÇÃO
+        ========================== */
+
+        .desafios {
+            display: grid;
+            grid-template-columns: 0.95fr 1.05fr;
+
+            gap: 35px;
+            align-items: center;
+
+            padding: 30px;
+        }
+
+        .imagem-desafio {
+            position: relative;
+            overflow: hidden;
+
+            border-radius: 14px;
+            background-color: var(--primary-light);
+
+            min-height: 300px;
+        }
+
+        .imagem-desafio img {
+            width: 100%;
+            height: 100%;
+            min-height: 300px;
+
+            object-fit: cover;
+
+            transition: transform 0.5s ease;
+        }
+
+        .imagem-desafio:hover img {
+            transform: scale(1.04);
+        }
+
+        .conteudo-desafio h3 {
+            font-size: 25px;
+            color: var(--primary);
+            margin-bottom: 17px;
+        }
+
+        .conteudo-desafio h3::after {
+            content: "";
+
+            display: block;
+            width: 45px;
+            height: 4px;
+
+            margin-top: 8px;
+
+            border-radius: 5px;
+            background-color: var(--secondary);
+        }
+
+        .conteudo-desafio p {
+            color: #535b6c;
+            font-size: 15px;
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .conteudo-desafio strong {
+            color: var(--primary-dark);
+        }
+
+        /* ==========================
+           7. MATERIAIS NECESSÁRIOS
+        ========================== */
+
+        .materiais {
+            margin-top: 25px;
+            padding: 30px;
+
+            background: #fbfaff;
+            border-top: 1px solid var(--border);
+        }
+
+        .materiais-cabecalho {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .materiais-cabecalho h3 {
+            font-size: 23px;
+            color: var(--primary-dark);
+            margin-bottom: 7px;
+        }
+
+        .materiais-cabecalho p {
+            font-size: 14px;
+            color: var(--text-light);
+        }
+
+        .lista-materiais {
+            display: grid;
+            grid-template-columns: repeat(5, minmax(0, 1fr));
+            gap: 14px;
+        }
+
+        .material {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            min-height: 115px;
+            padding: 18px 10px;
+
+            text-align: center;
+
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+
+            transition:
+                border-color 0.3s,
+                transform 0.3s,
+                box-shadow 0.3s;
+        }
+
+        .material:hover {
+            transform: translateY(-4px);
+            border-color: #c9b5f5;
+            box-shadow: 0 8px 20px rgba(84, 38, 168, 0.08);
+        }
+
+        .material .icone {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            width: 43px;
+            height: 43px;
+
+            margin-bottom: 10px;
+
+            background-color: var(--primary-light);
+            border-radius: 12px;
+
+            font-size: 23px;
+        }
+
+        .material span:last-child {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--text);
+        }
+
+        /* ==========================
+           8. A CIDADE DEVE POSSUIR
+        ========================== */
+
+        .cidade {
+            padding: 30px;
+            border-top: 1px solid var(--border);
+            background: var(--surface);
+        }
+
+        .cidades-cabecalho {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .cidades-cabecalho h3 {
+            font-size: 23px;
+            color: var(--primary-dark);
+            margin-bottom: 7px;
+        }
+
+        .cidades-cabecalho p {
+            font-size: 14px;
+            color: var(--text-light);
+        }
+
+        .lista-cidades {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 14px;
+        }
+
+        .lista-cartas {
+            display: grid;
+            grid-template-columns: repeat(5, minmax(0, 1fr));
+            gap: 14px;
+        }
+
+        /* Bloco do problema */
+        .problema {
+            margin: 35px 0 25px;
+            padding: 22px 26px;
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            border-radius: 14px;
+            background: #fff7e6;
+            border: 1px solid #f5d9a0;
+            border-left: 6px solid #f5a623;
+        }
+
+        .problema>i {
+            font-size: 30px;
+            color: #d98a00;
+        }
+
+        .problema h3 {
+            font-size: 19px;
+            color: #7a4b00;
+            margin-bottom: 4px;
+        }
+
+        .problema p {
+            font-size: 14px;
+            color: #8a6420;
+        }
+
+        /* Cartas-surpresa */
+        .carta {
+            background: white;
+            border: 1px solid #f5d9a0;
+            border-top: 4px solid #f5a623;
+            border-radius: 12px;
+            padding: 18px 10px;
+            min-height: 120px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .carta:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(245, 166, 35, 0.15);
+        }
+
+        .carta i {
+            font-size: 26px;
+            color: #d98a00;
+        }
+
+        .carta span {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--text);
+        }
+
+        /* Missão */
+        .missao-cidade {
+            margin-top: 25px;
+            padding: 20px 26px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            border-radius: 14px;
+            background: var(--primary-light);
+            border-left: 6px solid var(--primary);
+        }
+
+        .missao-cidade i {
+            font-size: 28px;
+            color: var(--primary);
+        }
+
+        .missao-cidade p {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--primary-dark);
+        }
+
+        /* ==========================
+           9. MENSAGEM FINAL
+        ========================== */
+
+        .mensagem-final {
+            margin-top: 25px;
+            padding: 30px;
+
+            border-radius: var(--radius);
+
+            background: linear-gradient(120deg,
+                    var(--primary-dark),
+                    var(--primary));
+
+            color: white;
+            text-align: center;
+        }
+
+        .mensagem-final h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .mensagem-final p {
+            max-width: 700px;
+            margin: 0 auto 20px;
+
+            color: #e8e0fa;
+            font-size: 15px;
+        }
+
+        .botao {
+            display: inline-block;
+
+            padding: 12px 23px;
+
+            border-radius: 9px;
+            background-color: var(--secondary);
+
+            color: white;
+            font-size: 14px;
+            font-weight: 800;
+
+            transition:
+                background-color 0.3s,
+                transform 0.3s;
+        }
+
+        .botao:hover {
+            background-color: var(--secondary-dark);
+            transform: translateY(-2px);
+        }
+
+        /* ==========================
+           10. RODAPÉ
+        ========================== */
+
+        .rodape {
+            padding: 25px 20px;
+
+            background-color: #20113f;
+            color: #d5c9ec;
+
+            text-align: center;
+            font-size: 13px;
+        }
+
+        .rodape strong {
+            color: white;
+        }
+
+        .rodape p+p {
+            margin-top: 5px;
+        }
+
+        /* ==========================
+           11. RESPONSIVIDADE
+        ========================== */
+
+        @media (max-width: 900px) {
+
+            .topo {
+                padding: 18px 5%;
+            }
+
+            .desafios {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .imagem-desafio,
+            .imagem-desafio img {
+                min-height: 350px;
+                max-height: 450px;
+            }
+
+            .lista-materiais {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+
+            .lista-cidades {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .lista-cartas {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .topo {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 18px;
+            }
+
+            .identidade img {
+                width: 55px;
+                height: 55px;
+            }
+
+            .identidade h2 {
+                font-size: 16px;
+            }
+
+            .navegacao {
+                width: 100%;
+                gap: 20px;
+                flex-wrap: wrap;
+            }
+
+            .navegacao a {
+                font-size: 13px;
+            }
+
+            .hero {
+                padding: 45px 20px 55px;
+            }
+
+            .hero>p {
+                font-size: 15px;
+            }
+
+            .principal {
+                width: 92%;
+                padding-bottom: 40px;
+            }
+
+            .cabecalho-desafio {
+                padding: 22px 20px;
+            }
+
+            .desafios {
+                padding: 20px;
+            }
+
+            .imagem-desafio,
+            .imagem-desafio img {
+                min-height: 240px;
+                max-height: 320px;
+            }
+
+            .conteudo-desafio h3 {
+                font-size: 22px;
+            }
+
+            .conteudo-desafio p {
+                font-size: 14px;
+            }
+
+            .materiais {
+                padding: 25px 18px;
+            }
+
+            .lista-materiais {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 10px;
+            }
+
+            .material {
+                min-height: 105px;
+            }
+
+            .cidade {
+                padding: 25px 18px;
+            }
+
+            .lista-cidades {
+                gap: 10px;
+            }
+
+            .lista-cartas {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 10px;
+            }
+
+            .problema,
+            .missao-cidade {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .mensagem-final {
+                padding: 25px 20px;
+            }
+
+            .mensagem-final h3 {
+                font-size: 21px;
+            }
+        }
+
+        /* ==========================
+           12. ACESSIBILIDADE
+        ========================== */
+
+        a:focus-visible {
+            outline: 3px solid #f5c451;
+            outline-offset: 4px;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+
+            *,
+            *::before,
+            *::after {
+                scroll-behavior: auto !important;
+                transition: none !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- CABEÇALHO -->
+    <header class="topo">
+
+        <a href="#" class="identidade" aria-label="Página inicial do JOTA-JOTI 2026">
+
+            <img src="img/logo.svg" alt="Logótipo do JOTA-JOTI 2026">
+
+            <div>
+                <h2>Agrupamento 293</h2>
+                <p>JOTA-JOTI 2026</p>
+            </div>
+
+        </a>
+
+        <nav class="navegacao" aria-label="Navegação principal">
+            <a href="#inicio">Início</a>
+            <a href="#desafios">Desafios</a>
+            <a href="#materiais">Materiais</a>
+            <a href="#cidades">A cidade</a>
+        </nav>
+
+    </header>
+
+
+    <!-- APRESENTAÇÃO -->
+    <section class="hero" id="inicio">
+
+        <span class="etiqueta">JOTA-JOTI 2026</span>
+
+        <h1>
+            Aprende, cria e supera<br>
+            <span>novos desafios!</span>
+        </h1>
+
+        <p>
+            Prepara-te para uma experiência de criatividade, aventura
+            e cooperação. Descobre as atividades, trabalha em equipa
+            e transforma as tuas ideias em grandes realizações.
+        </p>
+
+        <div class="hero-detalhes">
+            <span>
+                <i class="bi bi-people-fill"></i>
+                Trabalho em equipa
+            </span>
+
+            <span>
+                <i class="bi bi-lightbulb-fill"></i>
+                Criatividade
+            </span>
+
+            <span>
+                <i class="bi bi-recycle"></i>
+                Sustentabilidade
+            </span>
+        </div>
+
+    </section>
+
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="principal" id="desafios">
+
+        <div class="titulo-seccao">
+            <h2>Os nossos desafios</h2>
+            <p>
+                Cada desafio é uma oportunidade para aprender,
+                colaborar e fazer a diferença.
+            </p>
+        </div>
+
+
+        <!-- DESAFIO 1 -->
+        <article class="cards">
+
+            <header class="cabecalho-desafio">
+
+                <div>
+                    <span class="numero-desafio">DESAFIO 01</span>
+
+                    <h2>A Cidade das Equipas</h2>
+                </div>
+
+                <span class="estado-desafio">
+                    Missão de sustentabilidade
+                </span>
+
+            </header>
+
+
+            <!-- INTRODUÇÃO -->
+            <section class="desafios">
+
+                <div class="imagem-desafio">
+
+                    <img src="img/desafio1.jpg" alt="Exemplo de uma cidade construída com materiais recicláveis"
+                        loading="lazy">
+
+                </div>
+
+
+                <div class="conteudo-desafio">
+
+                    <h3>Introdução</h3>
+
+                    <p>
+                        Imaginem que foram escolhidos para construir
+                        uma nova cidade, um lugar onde as pessoas
+                        possam viver felizes, em segurança e em
+                        harmonia com a natureza.
+                    </p>
+
+                    <p>
+                        Uma cidade com casas, escolas, hospitais,
+                        estradas, jardins e espaços de lazer. Mas há
+                        um pequeno desafio: <strong>não podemos
+                            utilizar materiais novos!</strong> Teremos
+                        de dar uma nova vida àquilo que muitos
+                        consideram lixo.
+                    </p>
+
+                    <p>
+                        O vosso desafio será transformar materiais
+                        recicláveis numa pequena cidade, utilizando
+                        a imaginação, a criatividade e o espírito
+                        de entreajuda.
+                    </p>
+
+                    <p>
+                        Cada material terá o seu valor, cada ideia
+                        poderá fazer a diferença e cada participante
+                        terá um papel importante nesta missão.
+                    </p>
+
+                    <p>
+                        Construir uma cidade não significa apenas
+                        juntar casas e edifícios. É preciso pensar
+                        nas necessidades das pessoas, na organização
+                        dos espaços e na proteção do ambiente.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- MATERIAIS -->
+            <section class="materiais" id="materiais">
+
+                <div class="materiais-cabecalho">
+
+                    <h3>Materiais necessários</h3>
+
+                    <p>
+                        Reúne os materiais e prepara-te para dar
+                        vida à tua cidade sustentável!
+                    </p>
+
+                </div>
+
+
+                <div class="lista-materiais">
+                    <div class="material"> <span class="icone" aria-hidden="true"> <i class="bi bi-box-seam"></i>
+                        </span> <span>Caixa de papelão</span> </div>
+                    <div class="material"> <span class="icone" aria-hidden="true"> <i class="bi bi-recycle"></i> </span>
+                        <span>Garrafas PET</span> </div>
+                    <div class="material"> <span class="icone" aria-hidden="true"> <i class="bi bi-circle-fill"></i>
+                        </span> <span>Tampas</span> </div>
+                    <div class="material"> <span class="icone" aria-hidden="true"> <i class="bi bi-newspaper"></i>
+                        </span> <span>Jornais</span> </div>
+                    <div class="material"> <span class="icone" aria-hidden="true"> <i
+                                class="bi bi-file-earmark-richtext"></i> </span> <span>Cartolinas</span> </div>
+                    <div class="material"> <span class="icone" aria-hidden="true"> <i class="bi bi-tree"></i> </span>
+                        <span>Paus</span> </div>
+                    <div class="material"> <span class="icone" aria-hidden="true"> <i class="bi bi-flower1"></i> </span>
+                        <span>Folhas</span> </div>
+                    <div class="material"> <span class="icone" aria-hidden="true"> <i class="bi bi-droplet-fill"></i>
+                        </span> <span>Cola</span> </div>
+                    <div class="material"> <span class="icone" aria-hidden="true"> <i class="bi bi-scissors"></i>
+                        </span> <span>Tesoura</span> </div>
+                    <div class="material"> <span class="icone" aria-hidden="true"> <i class="bi bi-palette-fill"></i>
+                        </span> <span>Marcadores</span> </div>
+                </div>
+
+            </section>
+
+
+            <!-- A CIDADE DEVE POSSUIR -->
+            <section class="cidade" id="cidades">
+
+                <div class="cidades-cabecalho">
+                    <h3>A cidade deve possuir</h3>
+                    <p>Estes são os espaços essenciais que a vossa cidade sustentável precisa de ter.</p>
+                </div>
+
+                <div class="lista-cidades">
+                    <div class="material"><span class="icone" aria-hidden="true"><i class="bi bi-house-door-fill"></i></span><span>Casas</span></div>
+                    <div class="material"><span class="icone" aria-hidden="true"><i class="bi bi-hospital-fill"></i></span><span>Hospital</span></div>
+                    <div class="material"><span class="icone" aria-hidden="true"><i class="bi bi-mortarboard-fill"></i></span><span>Escola</span></div>
+                    <div class="material"><span class="icone" aria-hidden="true"><i class="bi bi-tree-fill"></i></span><span>Parque</span></div>
+                    <div class="material"><span class="icone" aria-hidden="true"><i class="bi bi-droplet-half"></i></span><span>Sistema de água</span></div>
+                    <div class="material"><span class="icone" aria-hidden="true"><i class="bi bi-recycle"></i></span><span>Centro de reciclagem</span></div>
+                    <div class="material"><span class="icone" aria-hidden="true"><i class="bi bi-lightning-charge-fill"></i></span><span>Fonte de energia</span></div>
+                    <div class="material"><span class="icone" aria-hidden="true"><i class="bi bi-shield-plus"></i></span><span>Serviço de emergência</span></div>
+                </div>
+
+                <div class="problema">
+                    <i class="bi bi-exclamation-triangle-fill" aria-hidden="true"></i>
+                    <div>
+                        <h3>Mas existe um problema...</h3>
+                        <p>Durante a construção, o chefe começa a apresentar cartas-surpresa:</p>
+                    </div>
+                </div>
+
+                <div class="lista-cartas">
+                    <div class="carta"><i class="bi bi-cloud-rain-heavy-fill" aria-hidden="true"></i><span>Uma grande chuva atingiu a cidade</span></div>
+                    <div class="carta"><i class="bi bi-fire" aria-hidden="true"></i><span>Houve um incêndio</span></div>
+                    <div class="carta"><i class="bi bi-trash3-fill" aria-hidden="true"></i><span>O lixo está a acumular-se</span></div>
+                    <div class="carta"><i class="bi bi-droplet" aria-hidden="true"></i><span>A cidade ficou sem água</span></div>
+                    <div class="carta"><i class="bi bi-tree" aria-hidden="true"></i><span>As árvores estão a desaparecer</span></div>
+                </div>
+
+                <div class="missao-cidade">
+                    <i class="bi bi-tools" aria-hidden="true"></i>
+                    <p>O grupo precisa de modificar a cidade para resolver o problema.</p>
+                </div>
+
+            </section>
+
+        </article>
+
+
+        <!-- MENSAGEM FINAL -->
+        <section class="mensagem-final">
+
+            <h3>Estão prontos para aceitar o desafio?</h3>
+
+            <p>
+                Usem a vossa imaginação, partilhem ideias e trabalhem
+                em equipa. O objetivo não é construir apenas uma
+                cidade, mas mostrar que juntos podemos criar
+                um futuro melhor!
+            </p>
+
+            <a href="#inicio" class="botao">
+                Vamos começar!
+            </a>
+
+        </section>
+
+    </main>
+
+
+    <!-- RODAPÉ -->
+    <footer class="rodape">
+
+        <p>
+            <strong>JOTA-JOTI 2026</strong> |
+            Agrupamento 293
+        </p>
+
+        <p>
+            Unidos pela aventura, criatividade e espírito de equipa.
+        </p>
+
+    </footer>
+
+</body>
+
+</html>

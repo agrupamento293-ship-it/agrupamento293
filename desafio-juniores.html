@@ -1,0 +1,1331 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="Atividade dos Juniores no JOTA-JOTI 2026 do Agrupamento 293: Missão Salvar o Planeta. Um circuito de 5 estações com o Passaporte Verde.">
+
+    <title>Missão: Salvar o Planeta | JOTA-JOTI 2026 — Agrupamento 293</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <style>
+        /* ==========================
+           1. CONFIGURAÇÕES GERAIS
+        ========================== */
+
+        :root {
+            --primary: #5426a8;
+            --primary-dark: #35166f;
+            --primary-light: #eee7fc;
+
+            --secondary: #17a673;
+            --secondary-dark: #087b52;
+            --secondary-light: #e6f8f0;
+
+            --warning: #f5a623;
+            --warning-dark: #d98a00;
+            --warning-light: #fff7e6;
+
+            --water: #1b8fd1;
+            --water-light: #e4f3fc;
+
+            --background: #f5f6fa;
+            --surface: #ffffff;
+
+            --text: #202438;
+            --text-light: #667085;
+
+            --border: #e7e8ef;
+
+            --shadow: 0 8px 30px rgba(34, 24, 66, 0.08);
+            --shadow-hover: 0 14px 38px rgba(34, 24, 66, 0.13);
+
+            --radius: 18px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            background-color: var(--background);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* ==========================
+           2. CABEÇALHO
+        ========================== */
+
+        .topo {
+            background: linear-gradient(120deg, var(--primary-dark), var(--primary));
+            color: white;
+            padding: 18px 7%;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 24px;
+            flex-wrap: wrap;
+
+            box-shadow: 0 4px 20px rgba(53, 22, 111, 0.2);
+        }
+
+        .identidade {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .identidade img {
+            width: 65px;
+            height: 65px;
+            object-fit: contain;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 5px;
+        }
+
+        .identidade h2 {
+            font-size: 19px;
+            font-weight: 700;
+            line-height: 1.4;
+        }
+
+        .identidade p {
+            font-size: 13px;
+            color: #e4d8ff;
+        }
+
+        .navegacao {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .navegacao a {
+            color: white;
+            font-size: 14px;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .navegacao a:hover,
+        .navegacao a[aria-current="page"] {
+            color: #c9f7e5;
+        }
+
+        /* ==========================
+           3. SECÇÃO PRINCIPAL
+        ========================== */
+
+        .hero {
+            padding: 65px 20px 75px;
+            text-align: center;
+
+            background:
+                radial-gradient(circle at top right, rgba(23, 166, 115, 0.16), transparent 35%),
+                radial-gradient(circle at bottom left, rgba(27, 143, 209, 0.10), transparent 35%),
+                linear-gradient(180deg, #ffffff, var(--background));
+        }
+
+        .etiqueta {
+            display: inline-block;
+            padding: 7px 15px;
+
+            border-radius: 50px;
+
+            background-color: var(--primary-light);
+            color: var(--primary);
+
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+
+            margin-bottom: 18px;
+        }
+
+        .hero h1 {
+            max-width: 800px;
+            margin: 0 auto 18px;
+
+            font-size: clamp(32px, 5vw, 52px);
+            line-height: 1.2;
+            letter-spacing: -1.5px;
+
+            color: var(--primary-dark);
+        }
+
+        .hero h1 span {
+            color: var(--secondary);
+        }
+
+        .hero>p {
+            max-width: 650px;
+            margin: 0 auto;
+
+            color: var(--text-light);
+            font-size: 17px;
+        }
+
+        .hero-detalhes {
+            margin-top: 28px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+
+            gap: 12px;
+        }
+
+        .hero-detalhes span {
+            padding: 8px 14px;
+            border: 1px solid var(--border);
+
+            border-radius: 50px;
+            background-color: white;
+
+            color: var(--text);
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        /* ==========================
+           4. CONTEÚDO PRINCIPAL
+        ========================== */
+
+        .principal {
+            width: min(1180px, 90%);
+            margin: 0 auto;
+            padding: 15px 0 70px;
+        }
+
+        .titulo-seccao {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .titulo-seccao h2 {
+            font-size: clamp(25px, 3vw, 34px);
+            color: var(--primary-dark);
+            margin-bottom: 8px;
+        }
+
+        .titulo-seccao p {
+            color: var(--text-light);
+            font-size: 15px;
+        }
+
+        /* ==========================
+           5. CARTÃO DA ATIVIDADE
+        ========================== */
+
+        .cards {
+            background-color: var(--surface);
+            border: 1px solid var(--border);
+
+            border-radius: var(--radius);
+            overflow: hidden;
+
+            box-shadow: var(--shadow);
+
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .cards:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .cabecalho-desafio {
+            padding: 25px 30px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 15px;
+            flex-wrap: wrap;
+
+            border-bottom: 1px solid var(--border);
+        }
+
+        .numero-desafio {
+            display: inline-block;
+
+            padding: 6px 12px;
+
+            border-radius: 8px;
+
+            background-color: var(--primary-light);
+            color: var(--primary);
+
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+
+            margin-bottom: 8px;
+        }
+
+        .cabecalho-desafio h2 {
+            font-size: clamp(21px, 3vw, 28px);
+            color: var(--text);
+            line-height: 1.35;
+        }
+
+        .estado-desafio {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+
+            color: var(--secondary-dark);
+            background: var(--secondary-light);
+
+            padding: 8px 13px;
+            border-radius: 50px;
+
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .estado-desafio::before {
+            content: "";
+            width: 8px;
+            height: 8px;
+
+            border-radius: 50%;
+            background-color: var(--secondary);
+        }
+
+        /* ==========================
+           6. INTRODUÇÃO
+        ========================== */
+
+        .desafios {
+            display: grid;
+            grid-template-columns: 0.95fr 1.05fr;
+
+            gap: 35px;
+            align-items: center;
+
+            padding: 30px;
+        }
+
+        .imagem-desafio {
+            position: relative;
+            overflow: hidden;
+
+            border-radius: 14px;
+            background-color: var(--primary-light);
+
+            min-height: 300px;
+        }
+
+        .imagem-desafio img {
+            width: 100%;
+            height: 100%;
+            min-height: 300px;
+
+            object-fit: cover;
+
+            transition: transform 0.5s ease;
+        }
+
+        .imagem-desafio:hover img {
+            transform: scale(1.04);
+        }
+
+        .conteudo-desafio h3 {
+            font-size: 25px;
+            color: var(--primary);
+            margin-bottom: 17px;
+        }
+
+        .conteudo-desafio h3::after {
+            content: "";
+
+            display: block;
+            width: 45px;
+            height: 4px;
+
+            margin-top: 8px;
+
+            border-radius: 5px;
+            background-color: var(--secondary);
+        }
+
+        .conteudo-desafio p {
+            color: #535b6c;
+            font-size: 15px;
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .conteudo-desafio strong {
+            color: var(--primary-dark);
+        }
+
+        /* ==========================
+           7. SECÇÕES INTERNAS
+        ========================== */
+
+        .bloco {
+            padding: 30px;
+            border-top: 1px solid var(--border);
+        }
+
+        .bloco.suave {
+            background: #fbfaff;
+        }
+
+        .bloco-cabecalho {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .bloco-cabecalho h3 {
+            font-size: 23px;
+            color: var(--primary-dark);
+            margin-bottom: 7px;
+        }
+
+        .bloco-cabecalho p {
+            font-size: 14px;
+            color: var(--text-light);
+        }
+
+        /* Passaporte Verde */
+        .passaporte {
+            display: flex;
+            align-items: center;
+            gap: 26px;
+
+            padding: 28px 30px;
+
+            border-radius: var(--radius);
+            background: linear-gradient(120deg, var(--secondary-dark), var(--secondary));
+            color: white;
+        }
+
+        .passaporte>i {
+            flex-shrink: 0;
+            font-size: 64px;
+            line-height: 1;
+        }
+
+        .passaporte h3 {
+            font-size: 22px;
+            margin-bottom: 6px;
+        }
+
+        .passaporte p {
+            font-size: 15px;
+            color: #e6fff4;
+        }
+
+        .carimbos {
+            margin-top: 14px;
+
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .carimbos span {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+
+            padding: 5px 12px;
+
+            border-radius: 50px;
+            background: rgba(255, 255, 255, 0.16);
+            border: 1px dashed rgba(255, 255, 255, 0.6);
+
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        /* Estações */
+        .estacoes {
+            display: grid;
+            gap: 18px;
+        }
+
+        .estacao {
+            display: grid;
+            grid-template-columns: 74px 1fr;
+            gap: 22px;
+            align-items: start;
+
+            padding: 24px 26px;
+
+            background: white;
+            border: 1px solid var(--border);
+            border-left: 6px solid var(--cor, var(--primary));
+            border-radius: 14px;
+
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .estacao:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 24px rgba(34, 24, 66, 0.1);
+        }
+
+        .estacao.agua {
+            --cor: var(--water);
+            --cor-clara: var(--water-light);
+        }
+
+        .estacao.reciclagem {
+            --cor: var(--secondary);
+            --cor-clara: var(--secondary-light);
+        }
+
+        .estacao.floresta {
+            --cor: #3f8f3a;
+            --cor-clara: #e8f5e6;
+        }
+
+        .estacao.solidariedade {
+            --cor: #d6457a;
+            --cor-clara: #fde9f1;
+        }
+
+        .estacao.final {
+            --cor: var(--warning-dark);
+            --cor-clara: var(--warning-light);
+        }
+
+        .estacao-icone {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .estacao-icone .num {
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--cor);
+        }
+
+        .estacao-icone .icone {
+            width: 62px;
+            height: 62px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 16px;
+            background: var(--cor-clara);
+            color: var(--cor);
+
+            font-size: 30px;
+        }
+
+        .estacao h4 {
+            font-size: 20px;
+            color: var(--primary-dark);
+            margin-bottom: 6px;
+        }
+
+        .estacao>div>p {
+            font-size: 15px;
+            color: #535b6c;
+            margin-bottom: 12px;
+        }
+
+        .estacao>div>p strong {
+            color: var(--text);
+        }
+
+        .nota {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+
+            padding: 10px 14px;
+
+            border-radius: 10px;
+            background: var(--cor-clara);
+
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text);
+            line-height: 1.55;
+        }
+
+        .nota i {
+            margin-top: 3px;
+            color: var(--cor);
+        }
+
+        .nota+.nota {
+            margin-top: 8px;
+        }
+
+        .nota b {
+            color: var(--cor);
+        }
+
+        /* Categorias da reciclagem */
+        .categorias {
+            display: grid;
+            grid-template-columns: repeat(5, minmax(0, 1fr));
+            gap: 10px;
+
+            margin-bottom: 12px;
+        }
+
+        .categoria {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+
+            padding: 12px 6px;
+
+            text-align: center;
+
+            border-radius: 10px;
+            background: white;
+            border: 1px solid var(--border);
+
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .categoria i {
+            font-size: 20px;
+            color: var(--secondary);
+        }
+
+        /* Situação final */
+        .situacao {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 10px;
+
+            margin-bottom: 12px;
+        }
+
+        .situacao span {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+
+            padding: 14px 8px;
+
+            text-align: center;
+
+            border-radius: 10px;
+            background: white;
+            border: 1px solid #f5d9a0;
+
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        .situacao i {
+            font-size: 22px;
+            color: var(--warning-dark);
+        }
+
+        .tempo-final {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+
+            margin-bottom: 12px;
+            padding: 6px 14px;
+
+            border-radius: 50px;
+            background: var(--warning-dark);
+            color: white;
+
+            font-size: 13px;
+            font-weight: 800;
+        }
+
+        /* Resultado */
+        .resultado {
+            max-width: 780px;
+            margin: 0 auto;
+
+            padding: 38px 30px;
+
+            text-align: center;
+
+            border-radius: var(--radius);
+            background: linear-gradient(145deg, #ffffff, #f1fbf6);
+            border: 3px solid var(--secondary);
+            box-shadow: 0 10px 28px rgba(23, 166, 115, 0.14);
+        }
+
+        .resultado>i {
+            font-size: 52px;
+            color: var(--warning);
+        }
+
+        .resultado small {
+            display: block;
+
+            margin-top: 6px;
+
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+
+            color: var(--text-light);
+        }
+
+        .resultado h3 {
+            margin: 8px 0 14px;
+
+            font-size: clamp(24px, 4vw, 36px);
+            line-height: 1.25;
+            letter-spacing: -0.5px;
+            text-transform: uppercase;
+
+            color: var(--secondary-dark);
+        }
+
+        .resultado p {
+            max-width: 520px;
+            margin: 0 auto;
+
+            font-size: 15px;
+            color: #535b6c;
+        }
+
+        /* ==========================
+           8. MENSAGEM FINAL
+        ========================== */
+
+        .mensagem-final {
+            margin-top: 25px;
+            padding: 30px;
+
+            border-radius: var(--radius);
+
+            background: linear-gradient(120deg, var(--primary-dark), var(--primary));
+
+            color: white;
+            text-align: center;
+        }
+
+        .mensagem-final h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .mensagem-final p {
+            max-width: 700px;
+            margin: 0 auto 20px;
+
+            color: #e8e0fa;
+            font-size: 15px;
+        }
+
+        .botoes {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .botao {
+            display: inline-block;
+
+            padding: 12px 23px;
+
+            border-radius: 9px;
+            background-color: var(--secondary);
+
+            color: white;
+            font-size: 14px;
+            font-weight: 800;
+
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .botao:hover {
+            background-color: var(--secondary-dark);
+            transform: translateY(-2px);
+        }
+
+        .botao.secundario {
+            background: transparent;
+            border: 2px solid rgba(255, 255, 255, 0.6);
+        }
+
+        .botao.secundario:hover {
+            background: rgba(255, 255, 255, 0.12);
+        }
+
+        /* ==========================
+           9. RODAPÉ
+        ========================== */
+
+        .rodape {
+            padding: 25px 20px;
+
+            background-color: #20113f;
+            color: #d5c9ec;
+
+            text-align: center;
+            font-size: 13px;
+        }
+
+        .rodape strong {
+            color: white;
+        }
+
+        .rodape p+p {
+            margin-top: 5px;
+        }
+
+        /* ==========================
+           10. RESPONSIVIDADE
+        ========================== */
+
+        @media (max-width: 900px) {
+
+            .topo {
+                padding: 18px 5%;
+            }
+
+            .desafios {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .imagem-desafio,
+            .imagem-desafio img {
+                min-height: 350px;
+                max-height: 450px;
+            }
+
+            .categorias {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .topo {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 18px;
+            }
+
+            .identidade img {
+                width: 55px;
+                height: 55px;
+            }
+
+            .identidade h2 {
+                font-size: 16px;
+            }
+
+            .navegacao {
+                width: 100%;
+                gap: 20px;
+            }
+
+            .navegacao a {
+                font-size: 13px;
+            }
+
+            .hero {
+                padding: 45px 20px 55px;
+            }
+
+            .hero>p {
+                font-size: 15px;
+            }
+
+            .principal {
+                width: 92%;
+                padding-bottom: 40px;
+            }
+
+            .cabecalho-desafio {
+                padding: 22px 20px;
+            }
+
+            .desafios {
+                padding: 20px;
+            }
+
+            .imagem-desafio,
+            .imagem-desafio img {
+                min-height: 240px;
+                max-height: 320px;
+            }
+
+            .conteudo-desafio h3 {
+                font-size: 22px;
+            }
+
+            .conteudo-desafio p {
+                font-size: 14px;
+            }
+
+            .bloco {
+                padding: 25px 18px;
+            }
+
+            .passaporte {
+                flex-direction: column;
+                text-align: center;
+                padding: 25px 20px;
+            }
+
+            .carimbos {
+                justify-content: center;
+            }
+
+            .estacao {
+                grid-template-columns: 1fr;
+                gap: 14px;
+                padding: 20px 18px;
+            }
+
+            .estacao-icone {
+                flex-direction: row;
+                justify-content: flex-start;
+                gap: 12px;
+            }
+
+            .categorias {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .situacao {
+                grid-template-columns: 1fr;
+            }
+
+            .resultado {
+                padding: 28px 18px;
+            }
+
+            .mensagem-final {
+                padding: 25px 20px;
+            }
+
+            .mensagem-final h3 {
+                font-size: 21px;
+            }
+        }
+
+        /* ==========================
+           11. ACESSIBILIDADE
+        ========================== */
+
+        a:focus-visible {
+            outline: 3px solid #f5c451;
+            outline-offset: 4px;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+
+            *,
+            *::before,
+            *::after {
+                scroll-behavior: auto !important;
+                transition: none !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- CABEÇALHO -->
+    <header class="topo">
+
+        <a href="#inicio" class="identidade" aria-label="Página inicial do JOTA-JOTI 2026">
+
+            <img src="img/logo.svg" alt="Logótipo do JOTA-JOTI 2026">
+
+            <div>
+                <h2>Agrupamento 293</h2>
+                <p>JOTA-JOTI 2026</p>
+            </div>
+
+        </a>
+
+        <nav class="navegacao" aria-label="Navegação principal">
+            <a href="index.html">Atividade 1</a>
+            <a href="desafio1.html">Atividade 2</a>
+            <a href="desafio-juniores.html" aria-current="page">Juniores</a>
+            <a href="#estacoes">Estações</a>
+        </nav>
+
+    </header>
+
+
+    <!-- APRESENTAÇÃO -->
+    <section class="hero" id="inicio">
+
+        <span class="etiqueta">Juniores · JOTA-JOTI 2026</span>
+
+        <h1>
+            Missão:<br>
+            <span>Salvar o Planeta</span>
+        </h1>
+
+        <p>
+            Um grande circuito de desafios onde a tua patrulha vai
+            provar que, juntos, é possível cuidar da água, da floresta
+            e das pessoas.
+        </p>
+
+        <div class="hero-detalhes">
+            <span>
+                <i class="bi bi-signpost-split-fill"></i>
+                5 estações
+            </span>
+
+            <span>
+                <i class="bi bi-people-fill"></i>
+                Patrulhas
+            </span>
+
+            <span>
+                <i class="bi bi-globe-europe-africa"></i>
+                Cuidar do planeta
+            </span>
+        </div>
+
+    </section>
+
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="principal" id="desafios">
+
+        <div class="titulo-seccao">
+            <h2>Aceita a missão</h2>
+            <p>
+                Cada estação é um desafio. No fim, só as patrulhas
+                que cooperam chegam até ao título final.
+            </p>
+        </div>
+
+
+        <!-- ATIVIDADE JUNIORES -->
+        <article class="cards">
+
+            <header class="cabecalho-desafio">
+
+                <div>
+                    <span class="numero-desafio">ATIVIDADE 02 · JUNIORES</span>
+
+                    <h2>Missão: Salvar o Planeta</h2>
+                </div>
+
+                <span class="estado-desafio">
+                    Circuito de desafios
+                </span>
+
+            </header>
+
+
+            <!-- INTRODUÇÃO -->
+            <section class="desafios">
+
+                <div class="imagem-desafio">
+
+                    <img src="img/desafio4.jpg" alt="Patrulha de Juniores a completar um circuito de desafios"
+                        loading="lazy">
+
+                </div>
+
+
+                <div class="conteudo-desafio">
+
+                    <h3>Introdução</h3>
+
+                    <p>
+                        O planeta precisa de heróis e a vossa patrulha
+                        foi escolhida! Para cumprir a missão, vão
+                        percorrer <strong>um grande circuito com
+                            5 estações</strong>, cada uma com um desafio
+                        diferente.
+                    </p>
+
+                    <p>
+                        Água, reciclagem, floresta, solidariedade
+                        e um desafio final: em cada estação vão
+                        aprender algo novo sobre o mundo em que
+                        vivemos e sobre o que podemos fazer por ele.
+                    </p>
+
+                    <p>
+                        Trabalhem em equipa, ajudem-se uns aos
+                        outros e, no final, conquistem o vosso título!
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- PASSAPORTE VERDE -->
+            <section class="bloco">
+
+                <div class="passaporte">
+
+                    <i class="bi bi-journal-bookmark-fill" aria-hidden="true"></i>
+
+                    <div>
+                        <h3>O Passaporte Verde</h3>
+                        <p>
+                            Cada patrulha recebe um Passaporte Verde
+                            e leva-o consigo por todas as estações.
+                            Em cada uma, a patrulha recebe o seu carimbo.
+                        </p>
+
+                        <div class="carimbos">
+                            <span><i class="bi bi-patch-check-fill" aria-hidden="true"></i> Água</span>
+                            <span><i class="bi bi-patch-check-fill" aria-hidden="true"></i> Reciclagem</span>
+                            <span><i class="bi bi-patch-check-fill" aria-hidden="true"></i> Floresta</span>
+                            <span><i class="bi bi-patch-check-fill" aria-hidden="true"></i> Solidariedade</span>
+                            <span><i class="bi bi-patch-check-fill" aria-hidden="true"></i> Desafio final</span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ESTAÇÕES -->
+            <section class="bloco suave" id="estacoes">
+
+                <div class="bloco-cabecalho">
+                    <h3>As 5 estações</h3>
+                    <p>Completem cada desafio e carimbem o vosso passaporte.</p>
+                </div>
+
+                <div class="estacoes">
+
+                    <!-- Estação 1 -->
+                    <div class="estacao agua">
+                        <div class="estacao-icone">
+                            <span class="num">Estação 1</span>
+                            <span class="icone" aria-hidden="true"><i class="bi bi-droplet-fill"></i></span>
+                        </div>
+                        <div>
+                            <h4>Água</h4>
+                            <p>
+                                <strong>Desafio:</strong> transportar água
+                                usando recipientes improvisados, sem
+                                derramar.
+                            </p>
+                            <div class="nota">
+                                <i class="bi bi-chat-quote-fill" aria-hidden="true"></i>
+                                <span><b>Mensagem:</b> “Nem todos têm acesso fácil à água.”</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Estação 2 -->
+                    <div class="estacao reciclagem">
+                        <div class="estacao-icone">
+                            <span class="num">Estação 2</span>
+                            <span class="icone" aria-hidden="true"><i class="bi bi-recycle"></i></span>
+                        </div>
+                        <div>
+                            <h4>Reciclagem</h4>
+                            <p>
+                                <strong>Desafio:</strong> separar
+                                rapidamente os materiais nas categorias
+                                certas.
+                            </p>
+
+                            <div class="categorias">
+                                <span class="categoria"><i class="bi bi-cup-straw" aria-hidden="true"></i>Plástico</span>
+                                <span class="categoria"><i class="bi bi-newspaper" aria-hidden="true"></i>Papel</span>
+                                <span class="categoria"><i class="bi bi-cup-fill" aria-hidden="true"></i>Metal</span>
+                                <span class="categoria"><i class="bi bi-apple" aria-hidden="true"></i>Orgânico</span>
+                                <span class="categoria"><i class="bi bi-trash3-fill" aria-hidden="true"></i>Rejeitos</span>
+                            </div>
+
+                            <div class="nota">
+                                <i class="bi bi-stopwatch-fill" aria-hidden="true"></i>
+                                <span><b>Atenção:</b> quanto mais rápida e certa for a separação, melhor!</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Estação 3 -->
+                    <div class="estacao floresta">
+                        <div class="estacao-icone">
+                            <span class="num">Estação 3</span>
+                            <span class="icone" aria-hidden="true"><i class="bi bi-tree-fill"></i></span>
+                        </div>
+                        <div>
+                            <h4>Floresta</h4>
+                            <p>
+                                <strong>Desafio:</strong> montar uma
+                                pequena árvore utilizando papelão.
+                            </p>
+                            <div class="nota">
+                                <i class="bi bi-pencil-fill" aria-hidden="true"></i>
+                                <span><b>Regra:</b> cada membro da patrulha escreve uma coisa que pode fazer para proteger a natureza.</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Estação 4 -->
+                    <div class="estacao solidariedade">
+                        <div class="estacao-icone">
+                            <span class="num">Estação 4</span>
+                            <span class="icone" aria-hidden="true"><i class="bi bi-heart-fill"></i></span>
+                        </div>
+                        <div>
+                            <h4>Solidariedade</h4>
+                            <p>
+                                <strong>Desafio:</strong> um membro da
+                                patrulha fica temporariamente “sem poder
+                                usar uma das mãos”. Os restantes têm de o
+                                ajudar a completar uma tarefa.
+                            </p>
+                            <div class="nota">
+                                <i class="bi bi-bullseye" aria-hidden="true"></i>
+                                <span><b>Objetivo:</b> perceber que nem todos conseguem fazer as coisas da mesma maneira.</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Estação 5 -->
+                    <div class="estacao final">
+                        <div class="estacao-icone">
+                            <span class="num">Estação 5</span>
+                            <span class="icone" aria-hidden="true"><i class="bi bi-flag-fill"></i></span>
+                        </div>
+                        <div>
+                            <h4>Desafio final</h4>
+                            <p>
+                                <strong>Situação:</strong> a vossa
+                                comunidade tem este problema:
+                            </p>
+
+                            <div class="situacao">
+                                <span><i class="bi bi-trash3-fill" aria-hidden="true"></i>Muito lixo</span>
+                                <span><i class="bi bi-droplet" aria-hidden="true"></i>Pouca água</span>
+                                <span><i class="bi bi-tree" aria-hidden="true"></i>Poucas árvores</span>
+                            </div>
+
+                            <span class="tempo-final">
+                                <i class="bi bi-stopwatch-fill" aria-hidden="true"></i>
+                                Apenas 10 minutos
+                            </span>
+
+                            <div class="nota">
+                                <i class="bi bi-megaphone-fill" aria-hidden="true"></i>
+                                <span><b>Missão:</b> elaborar um plano e apresentá-lo a todos.</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- RESULTADO -->
+            <section class="bloco" id="resultado">
+
+                <div class="bloco-cabecalho">
+                    <h3>Resultado</h3>
+                    <p>No final do circuito, a vossa patrulha recebe um título especial.</p>
+                </div>
+
+                <div class="resultado">
+                    <i class="bi bi-award-fill" aria-hidden="true"></i>
+                    <small>Título conquistado</small>
+                    <h3>Patrulha Guardiã da Terra</h3>
+                    <p>
+                        Cada estação concluída é um passo para
+                        proteger o nosso planeta. Esta patrulha
+                        provou que sabe cuidar da água, da floresta
+                        e das pessoas.
+                    </p>
+                </div>
+
+            </section>
+
+        </article>
+
+
+        <!-- MENSAGEM FINAL -->
+        <section class="mensagem-final">
+
+            <h3>Pronta para salvar o planeta?</h3>
+
+            <p>
+                Cooperem, ajudem-se e não desistam. O planeta
+                conta convosco!
+            </p>
+
+            <div class="botoes">
+                <a href="#inicio" class="botao">Vamos começar!</a>
+                <a href="index.html" class="botao secundario">Ver Atividade 1</a>
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- RODAPÉ -->
+    <footer class="rodape">
+
+        <p>
+            <strong>JOTA-JOTI 2026</strong> |
+            Agrupamento 293
+        </p>
+
+        <p>
+            Unidos pela aventura, criatividade e espírito de equipa.
+        </p>
+
+    </footer>
+
+</body>
+
+</html>

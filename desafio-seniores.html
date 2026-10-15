@@ -1,0 +1,1361 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="Atividade dos Seniores no JOTA-JOTI 2026 do Agrupamento 293: Angola 2035, Que país queremos? Uma mesa-redonda jovem com propostas, debate e votação.">
+
+    <title>Angola 2035: Que país queremos? | JOTA-JOTI 2026 — Agrupamento 293</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <style>
+        /* ==========================
+           1. CONFIGURAÇÕES GERAIS
+        ========================== */
+
+        :root {
+            --primary: #5426a8;
+            --primary-dark: #35166f;
+            --primary-light: #eee7fc;
+
+            --secondary: #17a673;
+            --secondary-dark: #087b52;
+            --secondary-light: #e6f8f0;
+
+            --warning: #f5a623;
+            --warning-dark: #d98a00;
+            --warning-light: #fff7e6;
+
+            --background: #f5f6fa;
+            --surface: #ffffff;
+
+            --text: #202438;
+            --text-light: #667085;
+
+            --border: #e7e8ef;
+
+            --shadow: 0 8px 30px rgba(34, 24, 66, 0.08);
+            --shadow-hover: 0 14px 38px rgba(34, 24, 66, 0.13);
+
+            --radius: 18px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            background-color: var(--background);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* ==========================
+           2. CABEÇALHO
+        ========================== */
+
+        .topo {
+            background: linear-gradient(120deg, var(--primary-dark), var(--primary));
+            color: white;
+            padding: 18px 7%;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 24px;
+            flex-wrap: wrap;
+
+            box-shadow: 0 4px 20px rgba(53, 22, 111, 0.2);
+        }
+
+        .identidade {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .identidade img {
+            width: 65px;
+            height: 65px;
+            object-fit: contain;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 5px;
+        }
+
+        .identidade h2 {
+            font-size: 19px;
+            font-weight: 700;
+            line-height: 1.4;
+        }
+
+        .identidade p {
+            font-size: 13px;
+            color: #e4d8ff;
+        }
+
+        .navegacao {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .navegacao a {
+            color: white;
+            font-size: 14px;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .navegacao a:hover,
+        .navegacao a[aria-current="page"] {
+            color: #c9f7e5;
+        }
+
+        /* ==========================
+           3. SECÇÃO PRINCIPAL
+        ========================== */
+
+        .hero {
+            padding: 65px 20px 75px;
+            text-align: center;
+
+            background:
+                radial-gradient(circle at top right, rgba(84, 38, 168, 0.16), transparent 38%),
+                radial-gradient(circle at bottom left, rgba(245, 166, 35, 0.12), transparent 35%),
+                linear-gradient(180deg, #ffffff, var(--background));
+        }
+
+        .etiqueta {
+            display: inline-block;
+            padding: 7px 15px;
+
+            border-radius: 50px;
+
+            background-color: var(--primary-light);
+            color: var(--primary);
+
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+
+            margin-bottom: 18px;
+        }
+
+        .hero h1 {
+            max-width: 800px;
+            margin: 0 auto 18px;
+
+            font-size: clamp(32px, 5vw, 52px);
+            line-height: 1.2;
+            letter-spacing: -1.5px;
+
+            color: var(--primary-dark);
+        }
+
+        .hero h1 span {
+            color: var(--secondary);
+        }
+
+        .hero>p {
+            max-width: 650px;
+            margin: 0 auto;
+
+            color: var(--text-light);
+            font-size: 17px;
+        }
+
+        .hero-detalhes {
+            margin-top: 28px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+
+            gap: 12px;
+        }
+
+        .hero-detalhes span {
+            padding: 8px 14px;
+            border: 1px solid var(--border);
+
+            border-radius: 50px;
+            background-color: white;
+
+            color: var(--text);
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        /* ==========================
+           4. CONTEÚDO PRINCIPAL
+        ========================== */
+
+        .principal {
+            width: min(1180px, 90%);
+            margin: 0 auto;
+            padding: 15px 0 70px;
+        }
+
+        .titulo-seccao {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .titulo-seccao h2 {
+            font-size: clamp(25px, 3vw, 34px);
+            color: var(--primary-dark);
+            margin-bottom: 8px;
+        }
+
+        .titulo-seccao p {
+            color: var(--text-light);
+            font-size: 15px;
+        }
+
+        /* ==========================
+           5. CARTÃO DA ATIVIDADE
+        ========================== */
+
+        .cards {
+            background-color: var(--surface);
+            border: 1px solid var(--border);
+
+            border-radius: var(--radius);
+            overflow: hidden;
+
+            box-shadow: var(--shadow);
+
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .cards:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .cabecalho-desafio {
+            padding: 25px 30px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 15px;
+            flex-wrap: wrap;
+
+            border-bottom: 1px solid var(--border);
+        }
+
+        .numero-desafio {
+            display: inline-block;
+
+            padding: 6px 12px;
+
+            border-radius: 8px;
+
+            background-color: var(--primary-light);
+            color: var(--primary);
+
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+
+            margin-bottom: 8px;
+        }
+
+        .cabecalho-desafio h2 {
+            font-size: clamp(21px, 3vw, 28px);
+            color: var(--text);
+            line-height: 1.35;
+        }
+
+        .estado-desafio {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+
+            color: var(--secondary-dark);
+            background: var(--secondary-light);
+
+            padding: 8px 13px;
+            border-radius: 50px;
+
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .estado-desafio::before {
+            content: "";
+            width: 8px;
+            height: 8px;
+
+            border-radius: 50%;
+            background-color: var(--secondary);
+        }
+
+        /* ==========================
+           6. INTRODUÇÃO
+        ========================== */
+
+        .desafios {
+            display: grid;
+            grid-template-columns: 0.95fr 1.05fr;
+
+            gap: 35px;
+            align-items: center;
+
+            padding: 30px;
+        }
+
+        .imagem-desafio {
+            position: relative;
+            overflow: hidden;
+
+            border-radius: 14px;
+            background-color: var(--primary-light);
+
+            min-height: 300px;
+        }
+
+        .imagem-desafio img {
+            width: 100%;
+            height: 100%;
+            min-height: 300px;
+
+            object-fit: cover;
+
+            transition: transform 0.5s ease;
+        }
+
+        .imagem-desafio:hover img {
+            transform: scale(1.04);
+        }
+
+        .conteudo-desafio h3 {
+            font-size: 25px;
+            color: var(--primary);
+            margin-bottom: 17px;
+        }
+
+        .conteudo-desafio h3::after {
+            content: "";
+
+            display: block;
+            width: 45px;
+            height: 4px;
+
+            margin-top: 8px;
+
+            border-radius: 5px;
+            background-color: var(--secondary);
+        }
+
+        .conteudo-desafio p {
+            color: #535b6c;
+            font-size: 15px;
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .conteudo-desafio strong {
+            color: var(--primary-dark);
+        }
+
+        /* ==========================
+           7. SECÇÕES INTERNAS
+        ========================== */
+
+        .bloco {
+            padding: 30px;
+            border-top: 1px solid var(--border);
+        }
+
+        .bloco.suave {
+            background: #fbfaff;
+        }
+
+        .bloco-cabecalho {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .bloco-cabecalho h3 {
+            font-size: 23px;
+            color: var(--primary-dark);
+            margin-bottom: 7px;
+        }
+
+        .bloco-cabecalho p {
+            font-size: 14px;
+            color: var(--text-light);
+        }
+
+        /* Pergunta central */
+        .pergunta {
+            position: relative;
+
+            padding: 36px 40px;
+
+            text-align: center;
+
+            border-radius: var(--radius);
+            background: linear-gradient(120deg, var(--primary-dark), var(--primary));
+            color: white;
+        }
+
+        .pergunta>i {
+            font-size: 34px;
+            color: #c9f7e5;
+        }
+
+        .pergunta small {
+            display: block;
+
+            margin: 6px 0 12px;
+
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+
+            color: #c9f7e5;
+        }
+
+        .pergunta p {
+            max-width: 780px;
+            margin: 0 auto;
+
+            font-size: clamp(18px, 2.6vw, 25px);
+            font-weight: 600;
+            line-height: 1.5;
+        }
+
+        .pergunta p strong {
+            color: #c9f7e5;
+        }
+
+        /* Formato: passos com tempo */
+        .formato {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 14px;
+        }
+
+        .etapa {
+            position: relative;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+
+            padding: 24px 14px 20px;
+
+            text-align: center;
+
+            background: white;
+            border: 1px solid var(--border);
+            border-top: 4px solid var(--primary);
+            border-radius: 12px;
+
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .etapa:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(84, 38, 168, 0.1);
+        }
+
+        .etapa:not(:last-child)::after {
+            content: "\F138";
+            font-family: "bootstrap-icons";
+
+            position: absolute;
+            top: 50%;
+            right: -17px;
+            transform: translateY(-50%);
+            z-index: 2;
+
+            width: 22px;
+            height: 22px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+            background: var(--primary);
+            color: white;
+
+            font-size: 12px;
+        }
+
+        .etapa .icone {
+            width: 50px;
+            height: 50px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 12px;
+            background: var(--primary-light);
+            color: var(--primary);
+
+            font-size: 25px;
+        }
+
+        .etapa h4 {
+            font-size: 16px;
+            color: var(--primary-dark);
+        }
+
+        .etapa .duracao {
+            padding: 3px 12px;
+
+            border-radius: 50px;
+            background: var(--secondary-light);
+            color: var(--secondary-dark);
+
+            font-size: 12px;
+            font-weight: 800;
+        }
+
+        .etapa p {
+            font-size: 13px;
+            color: var(--text-light);
+            line-height: 1.55;
+        }
+
+        /* Grupos */
+        .grupos {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 16px;
+        }
+
+        .grupo {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            padding: 22px 20px;
+
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 14px;
+
+            transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+        }
+
+        .grupo:hover {
+            transform: translateY(-4px);
+            border-color: #c9b5f5;
+            box-shadow: 0 10px 24px rgba(84, 38, 168, 0.1);
+        }
+
+        .grupo-topo {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .grupo .letra {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            width: 40px;
+            height: 40px;
+
+            border-radius: 10px;
+            background: var(--primary);
+            color: white;
+
+            font-size: 18px;
+            font-weight: 800;
+        }
+
+        .grupo .icone {
+            width: 46px;
+            height: 46px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 12px;
+            background: var(--primary-light);
+            color: var(--primary);
+
+            font-size: 23px;
+        }
+
+        .grupo small {
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--text-light);
+        }
+
+        .grupo h4 {
+            font-size: 18px;
+            line-height: 1.35;
+            color: var(--primary-dark);
+        }
+
+        .grupo .ods {
+            align-self: flex-start;
+
+            margin-top: auto;
+            padding: 3px 11px;
+
+            border-radius: 50px;
+            background: var(--secondary-light);
+            color: var(--secondary-dark);
+
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        /* Votação */
+        .votacao {
+            max-width: 860px;
+            margin: 0 auto;
+        }
+
+        .votacao-intro {
+            max-width: 620px;
+            margin: 0 auto 24px;
+
+            text-align: center;
+
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--primary-dark);
+        }
+
+        .podio {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 14px;
+        }
+
+        .podio-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+
+            padding: 26px 14px;
+
+            text-align: center;
+
+            border-radius: 14px;
+            background: linear-gradient(145deg, #ffffff, #f1fbf6);
+            border: 2px solid var(--secondary);
+
+            box-shadow: 0 8px 22px rgba(23, 166, 115, 0.12);
+        }
+
+        .podio-item i {
+            font-size: 34px;
+            color: var(--warning);
+        }
+
+        .podio-item strong {
+            font-size: 16px;
+            color: var(--secondary-dark);
+        }
+
+        .podio-item span {
+            font-size: 13px;
+            color: var(--text-light);
+        }
+
+        .destaque-final {
+            margin-top: 22px;
+
+            display: flex;
+            align-items: center;
+            gap: 14px;
+
+            padding: 18px 24px;
+
+            border-radius: 14px;
+            background: var(--primary-light);
+            border-left: 6px solid var(--primary);
+        }
+
+        .destaque-final i {
+            font-size: 26px;
+            color: var(--primary);
+        }
+
+        .destaque-final p {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--primary-dark);
+        }
+
+        /* Áreas do JOTA-JOTI */
+        .areas {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .areas span {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+
+            padding: 9px 18px;
+
+            border-radius: 50px;
+            background: white;
+            border: 1px solid var(--border);
+
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--primary-dark);
+        }
+
+        .areas i {
+            color: var(--secondary);
+        }
+
+        /* ==========================
+           8. MENSAGEM FINAL
+        ========================== */
+
+        .mensagem-final {
+            margin-top: 25px;
+            padding: 30px;
+
+            border-radius: var(--radius);
+
+            background: linear-gradient(120deg, var(--primary-dark), var(--primary));
+
+            color: white;
+            text-align: center;
+        }
+
+        .mensagem-final h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .mensagem-final p {
+            max-width: 700px;
+            margin: 0 auto 20px;
+
+            color: #e8e0fa;
+            font-size: 15px;
+        }
+
+        .botoes {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .botao {
+            display: inline-block;
+
+            padding: 12px 23px;
+
+            border-radius: 9px;
+            background-color: var(--secondary);
+
+            color: white;
+            font-size: 14px;
+            font-weight: 800;
+
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .botao:hover {
+            background-color: var(--secondary-dark);
+            transform: translateY(-2px);
+        }
+
+        .botao.secundario {
+            background: transparent;
+            border: 2px solid rgba(255, 255, 255, 0.6);
+        }
+
+        .botao.secundario:hover {
+            background: rgba(255, 255, 255, 0.12);
+        }
+
+        /* ==========================
+           9. RODAPÉ
+        ========================== */
+
+        .rodape {
+            padding: 25px 20px;
+
+            background-color: #20113f;
+            color: #d5c9ec;
+
+            text-align: center;
+            font-size: 13px;
+        }
+
+        .rodape strong {
+            color: white;
+        }
+
+        .rodape p+p {
+            margin-top: 5px;
+        }
+
+        /* ==========================
+           10. RESPONSIVIDADE
+        ========================== */
+
+        @media (max-width: 900px) {
+
+            .topo {
+                padding: 18px 5%;
+            }
+
+            .desafios {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .imagem-desafio,
+            .imagem-desafio img {
+                min-height: 350px;
+                max-height: 450px;
+            }
+
+            .formato {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .etapa:not(:last-child)::after {
+                display: none;
+            }
+
+            .grupos {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .topo {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 18px;
+            }
+
+            .identidade img {
+                width: 55px;
+                height: 55px;
+            }
+
+            .identidade h2 {
+                font-size: 16px;
+            }
+
+            .navegacao {
+                width: 100%;
+                gap: 20px;
+            }
+
+            .navegacao a {
+                font-size: 13px;
+            }
+
+            .hero {
+                padding: 45px 20px 55px;
+            }
+
+            .hero>p {
+                font-size: 15px;
+            }
+
+            .principal {
+                width: 92%;
+                padding-bottom: 40px;
+            }
+
+            .cabecalho-desafio {
+                padding: 22px 20px;
+            }
+
+            .desafios {
+                padding: 20px;
+            }
+
+            .imagem-desafio,
+            .imagem-desafio img {
+                min-height: 240px;
+                max-height: 320px;
+            }
+
+            .conteudo-desafio h3 {
+                font-size: 22px;
+            }
+
+            .conteudo-desafio p {
+                font-size: 14px;
+            }
+
+            .bloco {
+                padding: 25px 18px;
+            }
+
+            .pergunta {
+                padding: 28px 20px;
+            }
+
+            .formato,
+            .grupos,
+            .podio {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+
+            .destaque-final {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .mensagem-final {
+                padding: 25px 20px;
+            }
+
+            .mensagem-final h3 {
+                font-size: 21px;
+            }
+        }
+
+        /* ==========================
+           11. ACESSIBILIDADE
+        ========================== */
+
+        a:focus-visible {
+            outline: 3px solid #f5c451;
+            outline-offset: 4px;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+
+            *,
+            *::before,
+            *::after {
+                scroll-behavior: auto !important;
+                transition: none !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- CABEÇALHO -->
+    <header class="topo">
+
+        <a href="#inicio" class="identidade" aria-label="Página inicial do JOTA-JOTI 2026">
+
+            <img src="img/logo.svg" alt="Logótipo do JOTA-JOTI 2026">
+
+            <div>
+                <h2>Agrupamento 293</h2>
+                <p>JOTA-JOTI 2026</p>
+            </div>
+
+        </a>
+
+        <nav class="navegacao" aria-label="Navegação principal">
+            <a href="index.html">Atividade 1</a>
+            <a href="desafio1.html">Atividade 2</a>
+            <a href="desafio-juniores.html">Juniores</a>
+            <a href="desafio-seniores.html" aria-current="page">Seniores</a>
+            <a href="#grupos">Grupos</a>
+        </nav>
+
+    </header>
+
+
+    <!-- APRESENTAÇÃO -->
+    <section class="hero" id="inicio">
+
+        <span class="etiqueta">Seniores · JOTA-JOTI 2026</span>
+
+        <h1>
+            Angola 2035:<br>
+            <span>que país queremos?</span>
+        </h1>
+
+        <p>
+            Uma mesa-redonda jovem onde as vossas ideias contam.
+            Analisem um problema real, defendam uma proposta
+            e decidam em conjunto o que terá mais impacto.
+        </p>
+
+        <div class="hero-detalhes">
+            <span>
+                <i class="bi bi-chat-square-text-fill"></i>
+                Debate
+            </span>
+
+            <span>
+                <i class="bi bi-flag-fill"></i>
+                Liderança
+            </span>
+
+            <span>
+                <i class="bi bi-bullseye"></i>
+                Impacto real
+            </span>
+        </div>
+
+    </section>
+
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="principal" id="desafios">
+
+        <div class="titulo-seccao">
+            <h2>A vez dos Seniores</h2>
+            <p>
+                Menos jogo, mais responsabilidade: aqui, a voz
+                dos jovens ajuda a desenhar o futuro.
+            </p>
+        </div>
+
+
+        <!-- ATIVIDADE SENIORES -->
+        <article class="cards">
+
+            <header class="cabecalho-desafio">
+
+                <div>
+                    <span class="numero-desafio">ATIVIDADE 01 · SENIORES</span>
+
+                    <h2>Angola 2035: Que país queremos?</h2>
+                </div>
+
+                <span class="estado-desafio">
+                    Mesa-redonda jovem
+                </span>
+
+            </header>
+
+
+            <!-- INTRODUÇÃO -->
+            <section class="desafios">
+
+                <div class="imagem-desafio">
+
+                    <img src="img/desafio5.png" alt="Seniores reunidos numa mesa-redonda a debater propostas"
+                        loading="lazy">
+
+                </div>
+
+
+                <div class="conteudo-desafio">
+
+                    <h3>Introdução</h3>
+
+                    <p>
+                        O futuro de Angola também se decide
+                        agora, e passa por <strong>quem hoje é
+                            jovem</strong>. Nesta atividade, os Seniores
+                        vão assumir o papel de quem pensa, propõe
+                        e decide.
+                    </p>
+
+                    <p>
+                        Os Seniores serão <strong>divididos em
+                            grupos</strong> e cada grupo recebe um
+                        problema concreto do país. Têm de o
+                        compreender, preparar uma proposta e
+                        defendê-la perante todos.
+                    </p>
+
+                    <p>
+                        No fim, o debate leva a uma <strong>votação
+                            coletiva</strong>: não basta falar, é preciso
+                        escolher o que realmente muda a vida das
+                        comunidades.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- PERGUNTA CENTRAL -->
+            <section class="bloco">
+
+                <div class="pergunta">
+                    <i class="bi bi-quote" aria-hidden="true"></i>
+                    <small>A pergunta central</small>
+                    <p>
+                        “Se vocês fossem responsáveis pela vossa
+                        comunidade durante os <strong>próximos 10 anos</strong>,
+                        o que mudariam <strong>primeiro</strong>?”
+                    </p>
+                </div>
+
+            </section>
+
+
+            <!-- GRUPOS -->
+            <section class="bloco suave" id="grupos">
+
+                <div class="bloco-cabecalho">
+                    <h3>Os seis grupos</h3>
+                    <p>Cada grupo recebe um problema para analisar e resolver.</p>
+                </div>
+
+                <div class="grupos">
+
+                    <div class="grupo">
+                        <div class="grupo-topo">
+                            <span class="letra">A</span>
+                            <span class="icone" aria-hidden="true"><i class="bi bi-briefcase-fill"></i></span>
+                        </div>
+                        <small>Grupo A</small>
+                        <h4>Desemprego juvenil</h4>
+                        <span class="ods">ODS 8 · Trabalho digno</span>
+                    </div>
+
+                    <div class="grupo">
+                        <div class="grupo-topo">
+                            <span class="letra">B</span>
+                            <span class="icone" aria-hidden="true"><i class="bi bi-trash3-fill"></i></span>
+                        </div>
+                        <small>Grupo B</small>
+                        <h4>Lixo e poluição</h4>
+                        <span class="ods">ODS 12 · Consumo responsável</span>
+                    </div>
+
+                    <div class="grupo">
+                        <div class="grupo-topo">
+                            <span class="letra">C</span>
+                            <span class="icone" aria-hidden="true"><i class="bi bi-droplet-fill"></i></span>
+                        </div>
+                        <small>Grupo C</small>
+                        <h4>Água e saneamento</h4>
+                        <span class="ods">ODS 6 · Água e saneamento</span>
+                    </div>
+
+                    <div class="grupo">
+                        <div class="grupo-topo">
+                            <span class="letra">D</span>
+                            <span class="icone" aria-hidden="true"><i class="bi bi-lightning-charge-fill"></i></span>
+                        </div>
+                        <small>Grupo D</small>
+                        <h4>Energia</h4>
+                        <span class="ods">ODS 7 · Energia acessível</span>
+                    </div>
+
+                    <div class="grupo">
+                        <div class="grupo-topo">
+                            <span class="letra">E</span>
+                            <span class="icone" aria-hidden="true"><i class="bi bi-book-fill"></i></span>
+                        </div>
+                        <small>Grupo E</small>
+                        <h4>Educação</h4>
+                        <span class="ods">ODS 4 · Educação de qualidade</span>
+                    </div>
+
+                    <div class="grupo">
+                        <div class="grupo-topo">
+                            <span class="letra">F</span>
+                            <span class="icone" aria-hidden="true"><i class="bi bi-heart-pulse-fill"></i></span>
+                        </div>
+                        <small>Grupo F</small>
+                        <h4>Saúde mental e juventude</h4>
+                        <span class="ods">ODS 3 · Saúde e bem-estar</span>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- FORMATO -->
+            <section class="bloco" id="formato">
+
+                <div class="bloco-cabecalho">
+                    <h3>Como decorre a atividade</h3>
+                    <p>Do problema à decisão, em quatro momentos.</p>
+                </div>
+
+                <div class="formato">
+
+                    <div class="etapa">
+                        <span class="icone" aria-hidden="true"><i class="bi bi-pencil-square"></i></span>
+                        <h4>1. Preparar</h4>
+                        <span class="duracao">20 minutos</span>
+                        <p>Cada grupo analisa o seu problema e prepara uma proposta.</p>
+                    </div>
+
+                    <div class="etapa">
+                        <span class="icone" aria-hidden="true"><i class="bi bi-megaphone-fill"></i></span>
+                        <h4>2. Apresentar</h4>
+                        <span class="duracao">5 minutos</span>
+                        <p>Cada grupo apresenta a sua proposta a todos.</p>
+                    </div>
+
+                    <div class="etapa">
+                        <span class="icone" aria-hidden="true"><i class="bi bi-chat-dots-fill"></i></span>
+                        <h4>3. Debater</h4>
+                        <span class="duracao">Debate aberto</span>
+                        <p>Questionam, defendem e comparam as propostas.</p>
+                    </div>
+
+                    <div class="etapa">
+                        <span class="icone" aria-hidden="true"><i class="bi bi-check2-square"></i></span>
+                        <h4>4. Votar</h4>
+                        <span class="duracao">Decisão coletiva</span>
+                        <p>Todos escolhem as ideias com maior impacto.</p>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- RESULTADO -->
+            <section class="bloco suave" id="resultado">
+
+                <div class="bloco-cabecalho">
+                    <h3>Resultado</h3>
+                    <p>A atividade termina com uma decisão de todos.</p>
+                </div>
+
+                <div class="votacao">
+
+                    <p class="votacao-intro">
+                        No final, todos votam nas <strong>3 ideias
+                            com maior impacto</strong>.
+                    </p>
+
+                    <div class="podio">
+                        <div class="podio-item">
+                            <i class="bi bi-trophy-fill" aria-hidden="true"></i>
+                            <strong>Ideia 1</strong>
+                            <span>Maior impacto</span>
+                        </div>
+                        <div class="podio-item">
+                            <i class="bi bi-trophy-fill" aria-hidden="true"></i>
+                            <strong>Ideia 2</strong>
+                            <span>Segundo maior impacto</span>
+                        </div>
+                        <div class="podio-item">
+                            <i class="bi bi-trophy-fill" aria-hidden="true"></i>
+                            <strong>Ideia 3</strong>
+                            <span>Terceiro maior impacto</span>
+                        </div>
+                    </div>
+
+                    <div class="destaque-final">
+                        <i class="bi bi-people-fill" aria-hidden="true"></i>
+                        <p>
+                            Participação juvenil real: as ideias não
+                            ficam só em conversa, são escolhidas
+                            por todos.
+                        </p>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ÁREAS -->
+            <section class="bloco">
+
+                <div class="bloco-cabecalho">
+                    <h3>Ligação ao JOTA-JOTI</h3>
+                    <p>Esta atividade trabalha áreas centrais do JOTA-JOTI.</p>
+                </div>
+
+                <div class="areas">
+                    <span><i class="bi bi-peace-fill" aria-hidden="true"></i> Peace &amp; Community</span>
+                    <span><i class="bi bi-compass-fill" aria-hidden="true"></i> Life Skills</span>
+                    <span><i class="bi bi-tree-fill" aria-hidden="true"></i> Environment &amp; Sustainability</span>
+                    <span><i class="bi bi-globe-europe-africa" aria-hidden="true"></i> Objetivos de Desenvolvimento Sustentável</span>
+                </div>
+
+            </section>
+
+        </article>
+
+
+        <!-- MENSAGEM FINAL -->
+        <section class="mensagem-final">
+
+            <h3>Preparados para liderar a mudança?</h3>
+
+            <p>
+                Analisem, argumentem e escutem. O país que
+                queremos em 2035 começa nas ideias que
+                defendemos hoje.
+            </p>
+
+            <div class="botoes">
+                <a href="#inicio" class="botao">Vamos começar!</a>
+                <a href="desafio-juniores.html" class="botao secundario">Ver Juniores</a>
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- RODAPÉ -->
+    <footer class="rodape">
+
+        <p>
+            <strong>JOTA-JOTI 2026</strong> |
+            Agrupamento 293
+        </p>
+
+        <p>
+            Unidos pela aventura, criatividade e espírito de equipa.
+        </p>
+
+    </footer>
+
+</body>
+
+</html>
